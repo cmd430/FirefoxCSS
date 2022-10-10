@@ -1,0 +1,7 @@
+@supports -moz-bool-pref("userChrome.RemoveAllTabsButton") {
+  #TabsToolbar toolbarbutton {
+    &#alltabs-button {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@vgrid/sass-inline-svg": "^1.0.1",
+    "sass": "^1.55.0"
+  },
+  "scripts": {
+    "compile": "node compile.script"
+  }
+}

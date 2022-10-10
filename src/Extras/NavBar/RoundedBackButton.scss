@@ -1,0 +1,14 @@
+// Rounded Back Button
+@supports -moz-bool-pref("userChrome.RoundedBackButton") {
+  #nav-bar #back-button {
+    &:not(:hover), &[disabled="true"] {
+      .toolbarbutton-icon {
+        background: var(--lwt-toolbar-field-focus);
+      }
+    }
+    .toolbarbutton-icon {
+      border-radius: 50% !important;
+      box-shadow: 0 0 1px var(--chrome-content-separator-color);
+    }
+  }
+}

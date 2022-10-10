@@ -1,0 +1,7 @@
+:root[uidensity="touch"] {
+  --tab-min-height: 41px !important;
+  --tab-spacer-width: 20px;
+  --toolbarbutton-inner-padding-precalc: calc((var(--tab-min-height) / 2.5) / 2) !important;
+  --toolbarbutton-outer-padding-precalc: calc(var(--toolbarbutton-outer-padding) * 2);
+  --pin-unpin-edge-padding: var(--tab-spacer-width);
+}

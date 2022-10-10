@@ -1,0 +1,167 @@
+:root {
+  --tab-separator-color: var(--chrome-content-separator-color);
+  --border-radius: 4px;
+  --tab-border-radius: var(--border-radius) !important;
+  --toolbarbutton-border-radius: var(--border-radius) !important;
+  --arrowpanel-border-radius: var(--border-radius) !important;
+  --arrowpanel-menuitem-border-radius: var(--border-radius) !important;
+}
+
+// Style Overrides for Each Density Mode
+@import './Normal.scss';
+@import './Compact.scss';
+@import './Touch.scss';
+
+#TabsToolbar {
+  #tabbrowser-arrowscrollbox {
+    max-height: var(--tab-min-height);
+
+    &::part(scrollbutton-up), &::part(scrollbutton-down) {
+      border: 0 !important;
+      padding: 0 !important;
+    }
+  }
+
+  #tabbrowser-tabs {
+    --tab-line-color: var(--chrome-content-separator-color) !important;
+
+    &[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > tab.tabbrowser-tab[first-visible-unpinned-tab] {
+      margin-inline-start: var(--pin-unpin-edge-padding) !important;
+    }
+    &:not([secondarytext-unsupported]) tab.tabbrowser-tab:not(:hover) {
+      & .tab-icon-stack:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) > :not(.tab-icon-overlay) {
+        opacity: 1 !important;
+      }
+      & .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
+        opacity: 0 !important;
+      }
+    }
+
+    tab.tabbrowser-tab {
+      padding-inline: 0px !important;
+
+      .tab-stack { // fix colorways
+        --lwt-tab-line-color: inital !important;
+      }
+
+      .tab-background {
+        border-radius: 0 !important;
+        margin: 0 !important;
+
+        &::before, &::after {
+          background: var(--tab-separator-color);
+          content: '';
+          font-size: 0;
+          display: block;
+          width: 1px;
+          overflow: hidden;
+          position: absolute;
+          height: 100%;
+          opacity: 0.5 !important;
+        }
+        &::before {
+          transform: translateX(-0.5px);
+        }
+        &::after {
+          top: 0;
+          right: 0;
+          transform: translateX(0.5px);
+        }
+
+        .tab-context-line {
+          margin: 0 !important;
+          height: 2px;
+          background-color: transparent;
+        }
+      }
+
+      &[visuallyselected] .tab-background {
+        box-shadow: none !important;
+        border: none !important;
+
+        &::before, &::after {
+          opacity: 1 !important;
+        }
+      }
+      &:hover .tab-background {
+        &::before, &::after {
+          opacity: 0.8 !important;
+        }
+      }
+      &[usercontextid]:not([visuallyselected]):not(:hover) .tab-context-line {
+        opacity: 0.5;
+      }
+      &:not([usercontextid]):hover .tab-context-line {
+        background-color: var(--button-hover-bgcolor);
+      }
+      &[visuallyselected]:not([usercontextid]) .tab-context-line {
+        background-color: var(--tab-loading-fill);
+      }
+      &[visuallyselected] .tab-background {
+        background: var(--toolbar-bgcolor) !important;
+      }
+    }
+  }
+
+  .titlebar-spacer[type="pre-tabs"],
+  .titlebar-spacer[type="post-tabs"] {
+    width: var(--tab-spacer-width) !important;
+  }
+  .tab-icon-overlay[soundplaying]:not([crashed]),
+  .tab-icon-overlay[muted]:not([crashed]),
+  .tab-icon-overlay[activemedia-blocked]:not([crashed]) {
+    stroke: var(--tab-icon-overlay-stroke, rgb(0, 0, 0)) !important;
+    color: var(--tab-icon-overlay-fill, rgb(255, 255, 255)) !important;
+    fill: var(--tab-icon-overlay-fill, rgb(255, 255, 255)) !important;
+  }
+  .tab-icon-overlay:not([crashed]):is([pinned], [sharing]) {
+    top: 0 !important;
+    inset-inline-end: 0 !important;
+  }
+
+  toolbarbutton {
+    &#tabs-newtab-button,
+    &#new-tab-button,
+    &#alltabs-button {
+      --toolbarbutton-inner-padding: var(--toolbarbutton-inner-padding-precalc) !important;
+      margin: 0 !important;
+      padding: 0 var(--toolbarbutton-outer-padding-precalc) !important;
+    }
+  }
+}
+
+:root[sizemode="maximized"] {
+  #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[first-visible-tab] {
+    &:hover .tab-background, .tab-background {
+      &::before {
+        opacity: 0 !important;
+      }
+    }
+  }
+}
+
+#toolbar-menubar + #TabsToolbar #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-icon-image[src] ~ .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
+  padding: 0 !important;
+}
+
+#nav-bar {
+  --tabs-border-color: var(--chrome-content-separator-color) !important;
+  --lwt-tabs-border-color: var(--chrome-content-separator-color) !important;
+
+  #urlbar {
+    &[breakout][breakout-extend] {
+      top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+      left: 0 !important;
+      width: 100% !important;
+
+      & > #urlbar-input-container {
+        height: var(--urlbar-height) !important;
+        padding-inline: 0 !important;
+      }
+    }
+    &[focused="true"] > #urlbar-background {
+      border-width: 1px !important;
+      border-color: var(--focus-outline-color) !important;
+    }
+  }
+}

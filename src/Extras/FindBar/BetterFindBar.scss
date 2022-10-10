@@ -1,0 +1,24 @@
+// Top left smaller findbar
+@supports -moz-bool-pref("userChrome.BetterFindBar") {
+  #appcontent {
+    .browserContainer {
+      position: relative;
+    }
+    findbar {
+      position: absolute;
+      top: 0;
+      display: flex;
+      border-top: none !important;
+      border-bottom: 1px solid var(--chrome-content-separator-color);
+      border-right: 1px solid var(--chrome-content-separator-color);
+      border-bottom-right-radius: 4px;
+
+      &[hidden] {
+        display: flex !important;
+      }
+      .findbar-container {
+        min-width: 0 !important;
+      }
+    }
+  }
+}

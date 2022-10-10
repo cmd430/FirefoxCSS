@@ -1,0 +1,17 @@
+// Make prompt dialogs slightly cover the browser chrome to show they are legit
+@supports -moz-bool-pref("userChrome.SaferPromptDialogs") {
+  #tabbrowser-tabpanels .content-prompt-dialog {
+    & > .dialogOverlay {
+      display: revert !important;
+
+      & .dialogBox {
+        position: relative;
+        margin-top: -10px !important; // Make the popup cross over the browser chrome so we can tell it is a brower popup not part of the page
+        width: 100%;
+        max-width: min(80vw, 408px);
+        height: var(--doc-height-px);
+        border-radius: var(--border-radius) !important;
+      }
+    }
+  }
+}

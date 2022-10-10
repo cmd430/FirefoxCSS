@@ -1,0 +1,10 @@
+// Auto Show/Hide Bookmarks Bar
+@supports -moz-bool-pref("userChrome.SmartBookmarkBar") {
+  #PersonalToolbar {
+    transition: min-height 170ms ease-out, max-height 170ms ease-out, visibility 170ms linear;
+  }
+  #nav-bar:not(:focus-within) + #PersonalToolbar {
+    min-height: 0.1px !important;
+    max-height: 0 !important;
+  }
+}

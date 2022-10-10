@@ -1,0 +1,20 @@
+const fs = require('fs')
+const sass = require('sass')
+const inliner = require('@vgrid/sass-inline-svg')
+
+try {
+  const { css } = sass.renderSync({
+    file: 'src/userChrome.scss',
+    outputStyle: 'expanded',
+    sourceMap: false,
+    omitSourceMapUrl: true,
+    functions: {
+      'inline-svg($path, $selectors: null)': inliner('./src/')
+    }
+  })
+
+  fs.writeFileSync('dist/chrome/userChrome.css', css)
+} catch (err) {
+  console.error(err)
+}
+
