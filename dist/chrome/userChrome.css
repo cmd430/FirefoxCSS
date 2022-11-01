@@ -89,18 +89,17 @@
   height: 100%;
   opacity: 0.5 !important;
 }
-#TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background::before {
-  transform: translateX(-0.5px);
-}
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background::after {
   top: 0;
   right: 0;
-  transform: translateX(0.5px);
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background .tab-context-line {
   margin: 0 !important;
   height: 2px;
   background-color: transparent;
+}
+#TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab:not([first-visible-tab]) .tab-background::before {
+  transform: translateX(-1px);
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[visuallyselected] .tab-background {
   box-shadow: none !important;

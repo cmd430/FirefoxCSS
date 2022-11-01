@@ -59,13 +59,9 @@
           height: 100%;
           opacity: 0.5 !important;
         }
-        &::before {
-          transform: translateX(-0.5px);
-        }
         &::after {
           top: 0;
           right: 0;
-          transform: translateX(0.5px);
         }
 
         .tab-context-line {
@@ -75,6 +71,9 @@
         }
       }
 
+      &:not([first-visible-tab]) .tab-background::before {
+        transform: translateX(-1px);
+      }
       &[visuallyselected] .tab-background {
         box-shadow: none !important;
         border: none !important;
