@@ -7,6 +7,7 @@ user_pref("browser.urlbar.suggest.topsites", false);
 user_pref("browser.urlbar.suggest.quickactions", false);
 user_pref("browser.compactmode.show", true);
 user_pref("alerts.useSystemBackend", true);
+user_pref("extensions.unifiedExtensions.enabled", false);
 //userChrome Prefs
 user_pref("userChrome.BetterFindBar", true);
 user_pref("userChrome.UltraCompact", false);
