@@ -74,12 +74,16 @@
       &:not([first-visible-tab]) .tab-background::before {
         transform: translateX(-1px);
       }
-      &[visuallyselected] .tab-background {
-        box-shadow: none !important;
-        border: none !important;
+      &[visuallyselected] {
+        z-index: 1;
 
-        &::before, &::after {
-          opacity: 1 !important;
+        .tab-background {
+          box-shadow: none !important;
+          border: none !important;
+
+          &::before, &::after {
+            opacity: 1 !important;
+          }
         }
       }
       &:hover .tab-background {

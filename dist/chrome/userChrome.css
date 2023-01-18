@@ -101,6 +101,9 @@
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab:not([first-visible-tab]) .tab-background::before {
   transform: translateX(-1px);
 }
+#TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[visuallyselected] {
+  z-index: 1;
+}
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[visuallyselected] .tab-background {
   box-shadow: none !important;
   border: none !important;
