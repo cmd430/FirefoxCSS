@@ -4,6 +4,7 @@
     "sass": "^1.55.0"
   },
   "scripts": {
-    "compile": "node compile.script"
+    "compile": "node compile.script",
+    "compile & install": "node compile+install.script"
   }
 }

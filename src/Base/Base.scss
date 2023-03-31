@@ -22,6 +22,43 @@
     }
   }
 
+  toolbarbutton[id="firefox-view-button"] { // Firefox View
+    margin: 0 !important;
+    padding: 0 !important;
+
+    &::before {
+      content: '';
+      width: 36px;
+      height: 2px;
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: 2;
+    }
+    &:hover::before {
+      background: var(--button-hover-bgcolor);
+    }
+    &[open] {
+      .toolbarbutton-icon {
+        background: var(--toolbar-bgcolor) !important;
+        z-index: 1;
+      }
+      &::before {
+        background: linear-gradient(90deg, #9059FF 0%, #FF4AA2 52.08%, #FFBD4F 100%);
+      }
+    }
+    .toolbarbutton-icon {
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    +#tabbrowser-tabs {
+      border-inline-start: 1px solid var(--tab-separator-color) !important;
+      padding-inline-start: 0 !important;
+      margin-inline-start: 0 !important;
+    }
+  }
+
   #tabbrowser-tabs {
     --tab-line-color: var(--chrome-content-separator-color) !important;
 
@@ -85,6 +122,17 @@
             opacity: 1 !important;
           }
         }
+      }
+      &[multiselected],
+      &[multiselected][selected] {
+        .tab-background {
+          outline-offset: -2px !important;
+          &::after,
+          &:hover::after {
+            opacity: 0 !important;
+          }
+        }
+
       }
       &:hover .tab-background {
         &::before, &::after {

@@ -56,6 +56,38 @@
   border: 0 !important;
   padding: 0 !important;
 }
+#TabsToolbar toolbarbutton[id=firefox-view-button] {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#TabsToolbar toolbarbutton[id=firefox-view-button]::before {
+  content: "";
+  width: 36px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 2;
+}
+#TabsToolbar toolbarbutton[id=firefox-view-button]:hover::before {
+  background: var(--button-hover-bgcolor);
+}
+#TabsToolbar toolbarbutton[id=firefox-view-button][open] .toolbarbutton-icon {
+  background: var(--toolbar-bgcolor) !important;
+  z-index: 1;
+}
+#TabsToolbar toolbarbutton[id=firefox-view-button][open]::before {
+  background: linear-gradient(90deg, #9059FF 0%, #FF4AA2 52.08%, #FFBD4F 100%);
+}
+#TabsToolbar toolbarbutton[id=firefox-view-button] .toolbarbutton-icon {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+#TabsToolbar toolbarbutton[id=firefox-view-button] + #tabbrowser-tabs {
+  border-inline-start: 1px solid var(--tab-separator-color) !important;
+  padding-inline-start: 0 !important;
+  margin-inline-start: 0 !important;
+}
 #TabsToolbar #tabbrowser-tabs {
   --tab-line-color: var(--chrome-content-separator-color) !important;
 }
@@ -110,6 +142,12 @@
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[visuallyselected] .tab-background::before, #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[visuallyselected] .tab-background::after {
   opacity: 1 !important;
+}
+#TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[multiselected] .tab-background, #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[multiselected][selected] .tab-background {
+  outline-offset: -2px !important;
+}
+#TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[multiselected] .tab-background::after, #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[multiselected] .tab-background:hover::after, #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[multiselected][selected] .tab-background::after, #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[multiselected][selected] .tab-background:hover::after {
+  opacity: 0 !important;
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab:hover .tab-background::before, #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab:hover .tab-background::after {
   opacity: 0.8 !important;

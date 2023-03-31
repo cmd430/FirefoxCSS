@@ -1,0 +1,30 @@
+const fs = require('fs')
+const sass = require('sass')
+const inliner = require('@vgrid/sass-inline-svg')
+
+try {
+  const { css } = sass.renderSync({
+    file: 'src/userChrome.scss',
+    outputStyle: 'expanded',
+    sourceMap: false,
+    omitSourceMapUrl: true,
+    functions: {
+      'inline-svg($path, $selectors: null)': inliner('./src/')
+    }
+  })
+
+  const FIREFOX_DATA_DIR = process.env.APPDATA + '/Mozilla/Firefox/'
+  const PROFILE = fs.readFileSync(FIREFOX_DATA_DIR + 'installs.ini', {
+    encoding:'utf8',
+    flag:'r'
+  }).match(/^Default=(?<profile>.+)$/mi)?.groups.profile
+
+  fs.writeFileSync('dist/chrome/userChrome.css', css)
+
+  console.log(FIREFOX_DATA_DIR + PROFILE)
+
+  if (PROFILE) fs.copyFileSync('dist/chrome/userChrome.css', FIREFOX_DATA_DIR + PROFILE + '/chrome/userChrome.css')
+} catch (err) {
+  console.error(err)
+}
+
