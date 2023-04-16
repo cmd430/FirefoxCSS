@@ -509,16 +509,14 @@
   }
 }
 @supports -moz-bool-pref("userChrome.SaferPromptDialogs") {
-  #tabbrowser-tabpanels .content-prompt-dialog > .dialogOverlay {
-    display: revert !important;
-  }
   #tabbrowser-tabpanels .content-prompt-dialog > .dialogOverlay .dialogBox {
-    position: relative;
-    margin-top: -10px !important;
+    position: absolute;
+    margin: -10px 50% !important;
     width: 100%;
     max-width: min(80vw, 408px);
     height: var(--doc-height-px);
     border-radius: var(--border-radius) !important;
+    transform: translateX(-50%);
   }
 }
 @supports -moz-bool-pref("userChrome.RemoveAllTabsButton") {
