@@ -181,6 +181,12 @@
   }
 }
 
+:root[sizemode="normal"] {
+  #TabsToolbar{
+    margin-top: 1px !important;
+  }
+}
+
 :root[sizemode="maximized"] {
   #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[first-visible-tab] {
     &:hover .tab-background, .tab-background {

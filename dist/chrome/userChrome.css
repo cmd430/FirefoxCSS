@@ -185,6 +185,10 @@
   padding: 0 var(--toolbarbutton-outer-padding-precalc) !important;
 }
 
+:root[sizemode=normal] #TabsToolbar {
+  margin-top: 1px !important;
+}
+
 :root[sizemode=maximized] #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[first-visible-tab]:hover .tab-background::before, :root[sizemode=maximized] #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[first-visible-tab] .tab-background::before {
   opacity: 0 !important;
 }
