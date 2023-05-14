@@ -25,6 +25,7 @@
   toolbarbutton[id="firefox-view-button"] { // Firefox View
     margin: 0 !important;
     padding: 0 !important;
+    position: relative;
 
     &::before {
       content: '';
