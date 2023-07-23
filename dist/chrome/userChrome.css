@@ -63,7 +63,7 @@
 }
 #TabsToolbar toolbarbutton[id=firefox-view-button]::before {
   content: "";
-  width: 36px;
+  width: 100%;
   height: 2px;
   top: 0;
   left: 0;
