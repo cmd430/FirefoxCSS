@@ -13,13 +13,14 @@ try {
     }
   })
 
+  const CSS = css.toString().replace(/@media \(-moz-bool-pref: (userChrome\..+)\)/g, `@media (-moz-bool-pref: "$1")`)
   const FIREFOX_DATA_DIR = process.env.APPDATA + '/Mozilla/Firefox/'
   const PROFILE = fs.readFileSync(FIREFOX_DATA_DIR + 'installs.ini', {
     encoding:'utf8',
     flag:'r'
   }).match(/^Default=(?<profile>.+)$/mi)?.groups.profile
 
-  fs.writeFileSync('dist/chrome/userChrome.css', css)
+  fs.writeFileSync('dist/chrome/userChrome.css', CSS)
 
   console.log(FIREFOX_DATA_DIR + PROFILE)
 

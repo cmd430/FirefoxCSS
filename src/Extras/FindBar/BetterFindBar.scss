@@ -1,5 +1,5 @@
 // Top left smaller findbar
-@supports -moz-bool-pref("userChrome.BetterFindBar") {
+@media (-moz-bool-pref: "userChrome.BetterFindBar") {
   #appcontent {
     .browserContainer {
       position: relative;

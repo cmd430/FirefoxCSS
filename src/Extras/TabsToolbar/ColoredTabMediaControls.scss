@@ -1,5 +1,5 @@
 // Colored Media Controls on Tab (Mute/Unmute/Playing)
-@supports -moz-bool-pref("userChrome.ColoredTabMediaControls") {
+@media (-moz-bool-pref: "userChrome.ColoredTabMediaControls") {
   :root {
     --tab-icon-overlay-fill-muted: var(--buttons-destructive-bgcolor);
     --tab-icon-overlay-fill-playing: var(--panel-banner-item-update-supported-bgcolor);

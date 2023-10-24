@@ -13,7 +13,9 @@ try {
     }
   })
 
-  fs.writeFileSync('dist/chrome/userChrome.css', css)
+  const CSS = css.toString().replace(/@media \(-moz-bool-pref: (userChrome\..+)\)/g, `@media (-moz-bool-pref: "$1")`)
+
+  fs.writeFileSync('dist/chrome/userChrome.css', CSS)
 } catch (err) {
   console.error(err)
 }

@@ -1,5 +1,5 @@
 // Compact Menus with Icons
-@supports -moz-bool-pref("userChrome.CompactMenus") {
+@media (-moz-bool-pref: "userChrome.CompactMenus") {
   :root {
     --arrowpanel-menuicon-padding: 8px;
     --arrowpanel-menuitem-margin: 0 var(--arrowpanel-menuicon-padding) !important;

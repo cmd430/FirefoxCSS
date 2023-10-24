@@ -1,5 +1,5 @@
 // Make prompt dialogs slightly cover the browser chrome to show they are legit
-@supports -moz-bool-pref("userChrome.SaferPromptDialogs") {
+@media (-moz-bool-pref: "userChrome.SaferPromptDialogs") {
   #tabbrowser-tabpanels .content-prompt-dialog {
     & > .dialogOverlay {
       & .dialogBox {

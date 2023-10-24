@@ -22,7 +22,7 @@
   --toolbarbutton-outer-padding-precalc: calc(var(--toolbarbutton-outer-padding) * 1.5);
   --pin-unpin-edge-padding: var(--tab-spacer-width);
 }
-@supports -moz-bool-pref("userChrome.UltraCompact") {
+@media (-moz-bool-pref: "userChrome.UltraCompact") {
   :root[uidensity=compact] {
     --tab-min-height: 25px !important;
   }
@@ -216,7 +216,7 @@
   border-color: var(--focus-outline-color) !important;
 }
 
-@supports -moz-bool-pref("userChrome.BetterFindBar") {
+@media (-moz-bool-pref: "userChrome.BetterFindBar") {
   #appcontent .browserContainer {
     position: relative;
   }
@@ -237,7 +237,7 @@
     min-width: 0 !important;
   }
 }
-@supports -moz-bool-pref("userChrome.ColoredTabMediaControls") {
+@media (-moz-bool-pref: "userChrome.ColoredTabMediaControls") {
   :root {
     --tab-icon-overlay-fill-muted: var(--buttons-destructive-bgcolor);
     --tab-icon-overlay-fill-playing: var(--panel-banner-item-update-supported-bgcolor);
@@ -253,7 +253,7 @@
     fill: var(--tab-icon-overlay-fill-crashed) !important;
   }
 }
-@supports -moz-bool-pref("userChrome.RoundedBackButton") {
+@media (-moz-bool-pref: "userChrome.RoundedBackButton") {
   #nav-bar #back-button:not(:hover) .toolbarbutton-icon, #nav-bar #back-button[disabled=true] .toolbarbutton-icon {
     background: var(--lwt-toolbar-field-focus);
   }
@@ -262,7 +262,7 @@
     box-shadow: 0 0 1px var(--chrome-content-separator-color);
   }
 }
-@supports -moz-bool-pref("userChrome.SmartBookmarkBar") {
+@media (-moz-bool-pref: "userChrome.SmartBookmarkBar") {
   #PersonalToolbar {
     transition: min-height 170ms ease-out, max-height 170ms ease-out, visibility 170ms linear;
   }
@@ -271,7 +271,7 @@
     max-height: 0 !important;
   }
 }
-@supports -moz-bool-pref("userChrome.CompactMenus") {
+@media (-moz-bool-pref: "userChrome.CompactMenus") {
   :root {
     --arrowpanel-menuicon-padding: 8px;
     --arrowpanel-menuitem-margin: 0 var(--arrowpanel-menuicon-padding) !important;
@@ -513,7 +513,7 @@
     list-style-image: url("data:image/svg+xml;base64,PCEtLSBUaGlzIFNvdXJjZSBDb2RlIEZvcm0gaXMgc3ViamVjdCB0byB0aGUgdGVybXMgb2YgdGhlIE1vemlsbGEgUHVibGljCiAgIC0gTGljZW5zZSwgdi4gMi4wLiBJZiBhIGNvcHkgb2YgdGhlIE1QTCB3YXMgbm90IGRpc3RyaWJ1dGVkIHdpdGggdGhpcwogICAtIGZpbGUsIFlvdSBjYW4gb2J0YWluIG9uZSBhdCBodHRwOi8vbW96aWxsYS5vcmcvTVBMLzIuMC8uIC0tPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDE2IDE2IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9ImNvbnRleHQtZmlsbCIgZmlsbC1vcGFjaXR5PSJjb250ZXh0LWZpbGwtb3BhY2l0eSI+CiAgPHBhdGggZD0ibTguNjI4IDE2LTEuMjUgMGExLjYzMiAxLjYzMiAwIDAgMS0xLjU2Mi0xLjE3N2wtLjQwNi0xLjQxNGE1LjkzOSA1LjkzOSAwIDAgMS0uNzgtLjQ2NmwtMS40NDguMzZhMS42MzIgMS42MzIgMCAwIDEtMS43OTktLjc2NWwtLjYyNS0xLjA4MmExLjYzMyAxLjYzMyAwIDAgMSAuMjI5LTEuOTMxbDEuMDQ1LTEuMTAxQTMuMjc5IDMuMjc5IDAgMCAxIDIgOGMwLS4xNTMuMDE0LS4zMDIuMDMyLS40NUwuOTk5IDYuNDc5YTEuNjMgMS42MyAwIDAgMS0uMjM4LTEuOTRsLjYyNS0xLjA4M2ExLjYzNiAxLjYzNiAwIDAgMSAxLjc4Ny0uNzY4bDEuNDc3LjM1NWMuMjU4LS4xNzkuNTEtLjMyOS43NjEtLjQ1MmwuNDA2LTEuNDE0QTEuNjMgMS42MyAwIDAgMSA3LjM3OCAwbDEuMjUgMGMuNzE0IDAgMS4zNTQuNDc4IDEuNTU5IDEuMTYzbC40MjUgMS40MzZjLjI0Mi4xMjEuNDg0LjI2Ni43MzkuNDQ0bDEuNDc4LS4zNTVhMS42MzUgMS42MzUgMCAwIDEgMS43ODYuNzY4bC42MjUgMS4wODNjLjM2LjYyNS4yNjMgMS40MjItLjIzNyAxLjk0MWwtMS4wMzUgMS4wN2MuMDE4LjE0OC4wMzIuMjk3LjAzMi40NSAwIC4xNDUtLjAxNC4yODUtLjAzMS40MjRsMS4wNDUgMS4xMDFjLjQ5Mi41MTkuNTg2IDEuMzEyLjIyOSAxLjkzMWwtLjYyNSAxLjA4M2ExLjYzIDEuNjMgMCAwIDEtMS44Ljc2NGwtMS40NDctLjM2Yy0uMjU5LjE4Mi0uNTEuMzMzLS43NTkuNDU4bC0uNDI1IDEuNDM3QTEuNjM4IDEuNjM4IDAgMCAxIDguNjI4IDE2em0tNC4wMTYtNC4zNDEuNTI4LjEwOWE0LjcyIDQuNzIgMCAwIDAgMS4wMzIuNjE1bC4zNTkuNDA0LjQ4NSAxLjY5MWMuMDQ2LjE2LjE5NC4yNzEuMzYuMjcxbDEuMjUgMGEuMzcuMzcgMCAwIDAgLjM1OS0uMjY5bC41MDYtMS43MDcuMzU1LS4zOThjLjMyNC0uMTM3LjY0NS0uMzMgMS4wMS0uNjA4bC41MjktLjEwOSAxLjczMS40MzFhLjM3OC4zNzggMCAwIDAgLjQxNi0uMTc2bC42MjUtMS4wODNhLjM3OC4zNzggMCAwIDAtLjA1My0uNDQ2bC0xLjI1LTEuMzE3LS4xNjctLjUwNS4wMjItLjE3NGMuMDIxLS4xMjcuMDQxLS4yNTUuMDQxLS4zODggMC0uMTQ5LS4wMjEtLjI5My0uMDQyLS40MzdsLS4wMjEtLjE1LjE3MS0uNTEzIDEuMjQ0LTEuMjg5YS4zNzguMzc4IDAgMCAwIC4wNTUtLjQ0OGwtLjYyNS0xLjA4MmEuMzguMzggMCAwIDAtLjQxMi0uMTc3bC0xLjc1OC40MjItLjUyMS0uMTA4YTQuNyA0LjcgMCAwIDAtLjk5MS0uNTk0bC0uMzU2LS4zOTgtLjUwNi0xLjcwN2EuMzczLjM3MyAwIDAgMC0uMzYtLjI2OWwtMS4yNSAwYS4zNzcuMzc3IDAgMCAwLS4zNi4yNzFsLS40ODYgMS42OTEtLjM2LjQwNWE0LjcxIDQuNzEgMCAwIDAtMS4wMTMuNmwtLjUyMS4xMDktMS43NTctLjQyMmEuMzgzLjM4MyAwIDAgMC0uNDEzLjE3N2wtLjYyNSAxLjA4M2EuMzc1LjM3NSAwIDAgMCAuMDU1LjQ0N0wzLjE0MiA2LjlsLjE3MS41MTQtLjAyMS4xNUEyLjk4MSAyLjk4MSAwIDAgMCAzLjI1IDhjMCAuMTMzLjAyLjI2MS4wMzcuMzg5bC4wMjIuMTc0LS4xNjcuNTA1LTEuMjUgMS4zMTdhLjM4LjM4IDAgMCAwLS4wNTMuNDQ2bC42MjUgMS4wODNhLjM4LjM4IDAgMCAwIC40MTUuMTc2bDEuNzMzLS40MzF6Ii8+CiAgPHBhdGggZD0iTTggNi4yNWMuOTY1IDAgMS43NS43ODUgMS43NSAxLjc1UzguOTY1IDkuNzUgOCA5Ljc1IDYuMjUgOC45NjUgNi4yNSA4IDcuMDM1IDYuMjUgOCA2LjI1TTggNWEzIDMgMCAxIDAgMCA2IDMgMyAwIDAgMCAwLTZ6Ii8+Cjwvc3ZnPgo=");
   }
 }
-@supports -moz-bool-pref("userChrome.SaferPromptDialogs") {
+@media (-moz-bool-pref: "userChrome.SaferPromptDialogs") {
   #tabbrowser-tabpanels .content-prompt-dialog > .dialogOverlay .dialogBox {
     position: absolute;
     margin: -10px 50% !important;
@@ -524,7 +524,7 @@
     transform: translateX(-50%);
   }
 }
-@supports -moz-bool-pref("userChrome.RemoveAllTabsButton") {
+@media (-moz-bool-pref: "userChrome.RemoveAllTabsButton") {
   #TabsToolbar toolbarbutton#alltabs-button {
     display: none;
   }

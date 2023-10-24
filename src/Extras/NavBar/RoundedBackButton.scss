@@ -1,5 +1,5 @@
 // Rounded Back Button
-@supports -moz-bool-pref("userChrome.RoundedBackButton") {
+@media (-moz-bool-pref: "userChrome.RoundedBackButton") {
   #nav-bar #back-button {
     &:not(:hover), &[disabled="true"] {
       .toolbarbutton-icon {
