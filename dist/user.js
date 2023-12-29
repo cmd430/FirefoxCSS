@@ -19,3 +19,4 @@ user_pref("userChrome.SmartBookmarkBar", true);
 user_pref("userChrome.CompactMenus", true);
 user_pref("userChrome.SaferPromptDialogs", true);
 user_pref("userChrome.RemoveAllTabsButton", true);
+user_pref("userChrome.DisableInactiveFadeout", true);

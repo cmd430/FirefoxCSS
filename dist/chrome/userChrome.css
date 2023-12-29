@@ -49,6 +49,11 @@
   --pin-unpin-edge-padding: var(--tab-spacer-width);
 }
 
+:root[tabsintitlebar]:-moz-window-inactive #titlebar,
+:root[tabsintitlebar]:-moz-window-inactive #nav-bar {
+  opacity: 0.6 !important;
+}
+
 #TabsToolbar #tabbrowser-arrowscrollbox {
   max-height: var(--tab-min-height);
 }
@@ -527,5 +532,11 @@
 @media (-moz-bool-pref: "userChrome.RemoveAllTabsButton") {
   #TabsToolbar toolbarbutton#alltabs-button {
     display: none;
+  }
+}
+@media (-moz-bool-pref: "userChrome.DisableInactiveFadeout") {
+  :root[tabsintitlebar]:-moz-window-inactive #titlebar,
+:root[tabsintitlebar]:-moz-window-inactive #nav-bar {
+    opacity: 1 !important;
   }
 }
