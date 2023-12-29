@@ -207,6 +207,9 @@
   --tabs-border-color: var(--chrome-content-separator-color) !important;
   --lwt-tabs-border-color: var(--chrome-content-separator-color) !important;
 }
+#nav-bar:not([tabs-hidden=true]) {
+  box-shadow: 0 calc(-1 * var(--tabs-navbar-shadow-size)) 0 var(--tabs-border-color, rgba(0, 0, 0, 0.3)) !important;
+}
 #nav-bar #urlbar[breakout][breakout-extend] {
   top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
   left: 0 !important;

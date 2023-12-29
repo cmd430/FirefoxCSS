@@ -11,7 +11,6 @@
 @import './Normal.scss';
 @import './Compact.scss';
 @import './Touch.scss';
-
 :root[tabsintitlebar]:-moz-window-inactive {
   #titlebar,
   #nav-bar {
@@ -212,6 +211,10 @@
 #nav-bar {
   --tabs-border-color: var(--chrome-content-separator-color) !important;
   --lwt-tabs-border-color: var(--chrome-content-separator-color) !important;
+
+  &:not([tabs-hidden="true"]) {
+    box-shadow: 0 calc(-1 * var(--tabs-navbar-shadow-size)) 0 var(--tabs-border-color, rgba(0,0,0,.3)) !important;
+  }
 
   #urlbar {
     &[breakout][breakout-extend] {
