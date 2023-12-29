@@ -12,6 +12,13 @@
 @import './Compact.scss';
 @import './Touch.scss';
 
+:root[tabsintitlebar]:-moz-window-inactive {
+  #titlebar,
+  #nav-bar {
+    opacity: 0.6 !important;
+  }
+}
+
 #TabsToolbar {
   #tabbrowser-arrowscrollbox {
     max-height: var(--tab-min-height);
