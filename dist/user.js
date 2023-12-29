@@ -12,7 +12,7 @@ user_pref("signon.firefoxRelay.feature", "disabled");
 
 //userChrome Prefs
 user_pref("userChrome.BetterFindBar", true);
-user_pref("userChrome.UltraCompact", false);
+user_pref("userChrome.UltraCompact", true);
 user_pref("userChrome.ColoredTabMediaControls", true);
 user_pref("userChrome.RoundedBackButton", true);
 user_pref("userChrome.SmartBookmarkBar", true);
