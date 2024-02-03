@@ -115,6 +115,7 @@
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background {
   border-radius: 0 !important;
   margin: 0 !important;
+  border-bottom: 1px solid var(--tab-separator-color) !important;
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background::before, #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background::after {
   background: var(--tab-separator-color);
@@ -203,12 +204,12 @@
   padding: 0 !important;
 }
 
-#nav-bar {
-  --tabs-border-color: var(--chrome-content-separator-color) !important;
-  --lwt-tabs-border-color: var(--chrome-content-separator-color) !important;
+#titlebar {
+  z-index: 1;
 }
+
 #nav-bar:not([tabs-hidden=true]) {
-  box-shadow: 0 calc(-1 * var(--tabs-navbar-shadow-size)) 0 var(--tabs-border-color, rgba(0, 0, 0, 0.3)) !important;
+  box-shadow: 0 calc(-1 * var(--tabs-navbar-shadow-size)) 0 var(--tab-separator-color, rgba(0, 0, 0, 0.3)) !important;
 }
 #nav-bar #urlbar[breakout][breakout-extend] {
   top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
