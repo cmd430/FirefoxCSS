@@ -48,6 +48,9 @@
   --toolbarbutton-outer-padding-precalc: calc(var(--toolbarbutton-outer-padding) * 2);
   --pin-unpin-edge-padding: var(--tab-spacer-width);
 }
+:root[uidensity=touch] #nav-bar #urlbar[breakout][breakout-extend] > #urlbar-input-container image#urlbar-go-button {
+  margin: -5px 1px 0 0;
+}
 
 :root[tabsintitlebar]:-moz-window-inactive #titlebar,
 :root[tabsintitlebar]:-moz-window-inactive #nav-bar {
@@ -171,6 +174,9 @@
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[visuallyselected] .tab-background {
   background: var(--toolbar-bgcolor) !important;
 }
+#TabsToolbar .titlebar-spacer[type=pre-tabs] {
+  border-right: 1px solid var(--tab-separator-color) !important;
+}
 #TabsToolbar .titlebar-spacer[type=pre-tabs],
 #TabsToolbar .titlebar-spacer[type=post-tabs] {
   width: var(--tab-spacer-width) !important;
@@ -209,16 +215,19 @@
 }
 
 #nav-bar:not([tabs-hidden=true]) {
-  box-shadow: 0 calc(-1 * var(--tabs-navbar-shadow-size)) 0 var(--tab-separator-color, rgba(0, 0, 0, 0.3)) !important;
+  box-shadow: 0 -1px 0 var(--tab-separator-color, rgba(0, 0, 0, 0.3)) !important;
 }
 #nav-bar #urlbar[breakout][breakout-extend] {
-  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+  top: calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2) !important;
   left: 0 !important;
   width: 100% !important;
 }
 #nav-bar #urlbar[breakout][breakout-extend] > #urlbar-input-container {
   height: var(--urlbar-height) !important;
   padding-inline: 0 !important;
+}
+#nav-bar #urlbar[breakout][breakout-extend] > #urlbar-input-container image#urlbar-go-button {
+  margin: -4px 1px 0 0;
 }
 #nav-bar #urlbar[focused=true] > #urlbar-background {
   border-width: 1px !important;
@@ -349,7 +358,7 @@
   #appMenu-multiView .subviewbutton::before,
 #appMenu-proton-update-banner::before,
 .subviewbutton > image:not([label*=Zoom]) {
-    fill: currentColor !important;
+    fill: var(--toolbarbutton-icon-fill) !important;
     fill-opacity: var(--toolbarbutton-icon-fill-opacity) !important;
     -moz-context-properties: fill !important;
   }
