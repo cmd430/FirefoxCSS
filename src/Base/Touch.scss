@@ -4,4 +4,8 @@
   --toolbarbutton-inner-padding-precalc: calc((var(--tab-min-height) / 2.5) / 2) !important;
   --toolbarbutton-outer-padding-precalc: calc(var(--toolbarbutton-outer-padding) * 2);
   --pin-unpin-edge-padding: var(--tab-spacer-width);
+
+  #nav-bar #urlbar[breakout][breakout-extend] > #urlbar-input-container image#urlbar-go-button {
+    margin: -5px 1px 0 0;
+  }
 }
