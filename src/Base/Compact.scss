@@ -21,7 +21,7 @@
     }
   }
   #tabbrowser-tabs:not([secondarytext-unsupported]) tab.tabbrowser-tab:not(:hover) {
-   & .tab-icon-stack:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked], [crashed]) > :not(.tab-icon-overlay) {
+    & .tab-icon-stack:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked], [crashed]) > :not(.tab-icon-overlay) {
       opacity: 0 !important;
     }
     & .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
