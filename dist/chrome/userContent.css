@@ -2,7 +2,7 @@
  * Set Scrollbars to match Firefox dark theme by default
  * Websites can still override this with CSS if they want
  */
-:root {
+ :root {
   --scroll-bar-default-thumb-color: rgb(52, 51, 62);
   --scroll-bar-default-track-color: rgb(28, 27, 34);
   scrollbar-color: var(--scroll-bar-default-thumb-color) var(--scroll-bar-default-track-color);
@@ -10,18 +10,18 @@
 
 
 /*
- * Reduce Border Radius on New Tab page
+ * New Tab page Ajustments
  */
 @-moz-document url(about:newtab), url(about:home) {
-  .outer-wrapper.newtab-experience .search-wrapper .search-handoff-button,
-  .outer-wrapper.newtab-experience .search-wrapper input,
-  .outer-wrapper.newtab-experience .top-site-outer,
-  .outer-wrapper.newtab-experience .top-site-outer .tile,
-  .outer-wrapper.newtab-experience .card-outer,
-  .outer-wrapper.newtab-experience .card-outer .card {
-    border-radius: 4px !important;
+  .top-site-inner a + div {
+    position: absolute;
+    top: 21px;
+    right: -2px;
   }
-  .outer-wrapper.newtab-experience .card-outer .card-preview-image-outer {
-    border-radius: 4px 4px 0 0 !important;
+  .top-site-inner a + div > .context-menu-button.icon {
+    border-radius: 0px 7px 0px 4px;
+  }
+  .top-site-inner a + div > .context-menu {
+    top: -20px !important;
   }
 }
