@@ -9,6 +9,8 @@ user_pref("browser.compactmode.show", true);
 user_pref("alerts.useSystemBackend", true);
 user_pref("extensions.unifiedExtensions.enabled", false);
 user_pref("signon.firefoxRelay.feature", "disabled");
+user_pref("dom.ipc.processPriorityManager.backgroundUsesEcoQoS", false);
+
 
 //userChrome Prefs
 user_pref("userChrome.BetterFindBar", true);
