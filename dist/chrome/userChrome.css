@@ -1,10 +1,18 @@
 :root {
-  --tab-separator-color: var(--chrome-content-separator-color);
+  --nav-seperator-color: var(--chrome-content-separator-color) !important;
+  --tab-separator-color: var(--nav-seperator-color) !important;
+  --tab-line-color: var(--nav-seperator-color) !important;
   --border-radius: 4px;
   --tab-border-radius: var(--border-radius) !important;
   --toolbarbutton-border-radius: var(--border-radius) !important;
   --arrowpanel-border-radius: var(--border-radius) !important;
   --arrowpanel-menuitem-border-radius: var(--border-radius) !important;
+}
+:root[lwt-toolbar=light] {
+  --chrome-content-separator-color: rgba(0, 0, 0, 0.5) !important;
+}
+:root[lwt-toolbar=dark] {
+  --chrome-content-separator-color: rgba(0, 0, 0, 1) !important;
 }
 
 :root {
@@ -96,9 +104,6 @@
   border-inline-start: 1px solid var(--tab-separator-color) !important;
   padding-inline-start: 0 !important;
   margin-inline-start: 0 !important;
-}
-#TabsToolbar #tabbrowser-tabs {
-  --tab-line-color: var(--chrome-content-separator-color) !important;
 }
 #TabsToolbar #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > tab.tabbrowser-tab[first-visible-unpinned-tab] {
   margin-inline-start: var(--pin-unpin-edge-padding) !important;
@@ -243,8 +248,8 @@
     top: 0;
     display: flex;
     border-top: none !important;
-    border-bottom: 1px solid var(--chrome-content-separator-color);
-    border-right: 1px solid var(--chrome-content-separator-color);
+    border-bottom: 1px solid var(--nav-seperator-color);
+    border-right: 1px solid var(--nav-seperator-color);
     border-bottom-right-radius: 4px;
     contain: content;
   }
@@ -277,7 +282,7 @@
   }
   #nav-bar #back-button .toolbarbutton-icon {
     border-radius: 50% !important;
-    box-shadow: 0 0 1px var(--chrome-content-separator-color);
+    box-shadow: 0 0 1px var(--nav-seperator-color);
   }
 }
 @media (-moz-bool-pref: "userChrome.SmartBookmarkBar") {

@@ -1,5 +1,14 @@
 :root {
-  --tab-separator-color: var(--chrome-content-separator-color);
+  &[lwt-toolbar="light"] {
+    --chrome-content-separator-color: rgb(191, 190, 193) !important;
+  }
+  &[lwt-toolbar="dark"] {
+    --chrome-content-separator-color: rgb(15, 15, 15) !important;
+  }
+
+  --nav-seperator-color: var(--chrome-content-separator-color) !important;
+  --tab-separator-color: var(--nav-seperator-color) !important;
+  --tab-line-color: var(--nav-seperator-color) !important;
   --border-radius: 4px;
   --tab-border-radius: var(--border-radius) !important;
   --toolbarbutton-border-radius: var(--border-radius) !important;
@@ -67,7 +76,7 @@
   }
 
   #tabbrowser-tabs {
-    --tab-line-color: var(--chrome-content-separator-color) !important;
+    //--tab-line-color: var(--chrome-content-separator-color) !important;
 
     &[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > tab.tabbrowser-tab[first-visible-unpinned-tab] {
       margin-inline-start: var(--pin-unpin-edge-padding) !important;
