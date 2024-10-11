@@ -9,10 +9,10 @@
   --arrowpanel-menuitem-border-radius: var(--border-radius) !important;
 }
 :root[lwt-toolbar=light] {
-  --chrome-content-separator-color: rgba(0, 0, 0, 0.5) !important;
+  --chrome-content-separator-color: rgb(191, 190, 193) !important;
 }
 :root[lwt-toolbar=dark] {
-  --chrome-content-separator-color: rgba(0, 0, 0, 1) !important;
+  --chrome-content-separator-color: rgb(15, 15, 15) !important;
 }
 
 :root {
@@ -262,18 +262,33 @@
 }
 @media (-moz-bool-pref: "userChrome.ColoredTabMediaControls") {
   :root {
-    --tab-icon-overlay-fill-muted: var(--buttons-destructive-bgcolor);
+    --tab-icon-overlay-fill-muted: var(--button-background-color-destructive);
     --tab-icon-overlay-fill-playing: var(--panel-banner-item-update-supported-bgcolor);
     --tab-icon-overlay-fill-crashed: var(--warning-icon-bgcolor);
+  }
+  #TabsToolbar .tab-icon-overlay {
+    border: none !important;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 0 1px var(--nav-seperator-color) !important;
+    cursor: pointer !important;
   }
   #TabsToolbar .tab-icon-overlay[soundplaying]:not([crashed]) {
     fill: var(--tab-icon-overlay-fill-playing) !important;
   }
+  #TabsToolbar .tab-icon-overlay[soundplaying]:not([crashed]):hover {
+    box-shadow: 0 0 1px var(--tab-icon-overlay-fill-playing) !important;
+  }
   #TabsToolbar .tab-icon-overlay[muted]:not([crashed]) {
-    fill: var(--buttons-destructive-bgcolor) !important;
+    fill: var(--tab-icon-overlay-fill-muted) !important;
+  }
+  #TabsToolbar .tab-icon-overlay[muted]:not([crashed]):hover {
+    box-shadow: 0 0 1px var(--tab-icon-overlay-fill-muted) !important;
   }
   #TabsToolbar .tab-icon-overlay[crashed] {
     fill: var(--tab-icon-overlay-fill-crashed) !important;
+  }
+  #TabsToolbar .tab-icon-overlay[crashed]:hover {
+    box-shadow: 0 0 1px var(--tab-icon-overlay-fill-crashed) !important;
   }
 }
 @media (-moz-bool-pref: "userChrome.RoundedBackButton") {
