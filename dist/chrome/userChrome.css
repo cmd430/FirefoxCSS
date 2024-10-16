@@ -240,10 +240,10 @@
 }
 
 @media (-moz-bool-pref: "userChrome.BetterFindBar") {
-  #appcontent .browserContainer {
+  #browser .browserContainer {
     position: relative;
   }
-  #appcontent findbar {
+  #browser findbar {
     position: absolute;
     top: 0;
     display: flex;
@@ -253,10 +253,10 @@
     border-bottom-right-radius: 4px;
     contain: content;
   }
-  #appcontent findbar[hidden] {
+  #browser findbar[hidden] {
     display: flex !important;
   }
-  #appcontent findbar .findbar-container {
+  #browser findbar .findbar-container {
     min-width: 0 !important;
   }
 }
