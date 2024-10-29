@@ -9,17 +9,17 @@
     --tab-min-height: 25px !important;
   }
 
-  #titlebar {
+  #TabsToolbar {
     appearance: auto !important;
     -moz-default-appearance: none !important;
-  }
-  #TabsToolbar {
+
     toolbarbutton{
       &.titlebar-button {
         padding: 4px 17px !important;
       }
     }
   }
+
   #tabbrowser-tabs:not([secondarytext-unsupported]) tab.tabbrowser-tab:not(:hover) {
     & .tab-icon-stack:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked], [crashed]) > :not(.tab-icon-overlay) {
       opacity: 0 !important;

@@ -1,9 +1,6 @@
 // Stop Browser chrome from fading out on inactive window
 @media (-moz-bool-pref: "userChrome.DisableInactiveFadeout") {
   :root[tabsintitlebar]:-moz-window-inactive {
-    #titlebar,
-    #nav-bar {
-      opacity: 1 !important;
-    }
+    --inactive-titlebar-opacity: 1 !important;
   }
 }

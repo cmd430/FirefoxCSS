@@ -21,13 +21,21 @@
 @import './Compact.scss';
 @import './Touch.scss';
 :root[tabsintitlebar]:-moz-window-inactive {
-  #titlebar,
+  .browser-titlebar#TabsToolbar,
   #nav-bar {
-    opacity: 0.6 !important;
+    opacity: var(--inactive-titlebar-opacity) !important;
   }
 }
 
+// fix for close button color
+.titlebar-close:hover {
+  background-color: rgb(193, 42, 28) !important;
+  stroke: rgb(250, 238, 237) !important;
+}
+
 #TabsToolbar {
+  z-index: 1;
+
   #tabbrowser-arrowscrollbox {
     max-height: var(--tab-min-height);
 
@@ -52,7 +60,7 @@
       z-index: 2;
     }
     &:hover::before {
-      background: var(--button-hover-bgcolor);
+      background: var(--toolbarbutton-hover-background);
     }
     &[open] {
       .toolbarbutton-icon {
@@ -160,7 +168,7 @@
         opacity: 0.5;
       }
       &:not([usercontextid]):hover .tab-context-line {
-        background-color: var(--button-hover-bgcolor);
+        background-color: var(--toolbarbutton-hover-background);
       }
       &[visuallyselected]:not([usercontextid]) .tab-context-line {
         background-color: var(--tab-loading-fill);
@@ -217,37 +225,22 @@
   }
 }
 
-#toolbar-menubar + #TabsToolbar #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-icon-image[src] ~ .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-  padding: 0 !important;
-}
+#toolbar-menubar {
+  box-shadow: 0 1px 0 var(--tab-separator-color, rgba(0, 0, 0, 0.3)) !important;
 
-#titlebar {
-  z-index: 1;
+  &[autohide="true"] {
+    min-height: unset !important;
+  }
+
+  + #TabsToolbar #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-icon-image[src] ~ .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
+    padding: 0 !important;
+  }
 }
 
 #nav-bar {
+  position: unset;
+
   &:not([tabs-hidden="true"]) {
     box-shadow: 0 calc(-1 * 1px) 0 var(--tab-separator-color, rgba(0,0,0,.3)) !important;
-  }
-
-  #urlbar {
-    &[breakout][breakout-extend] {
-      top: calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2) !important;
-      left: 0 !important;
-      width: 100% !important;
-
-      & > #urlbar-input-container {
-        height: var(--urlbar-height) !important;
-        padding-inline: 0 !important;
-
-        image#urlbar-go-button {
-          margin: -4px 1px 0 0;
-        }
-      }
-    }
-    &[focused="true"] > #urlbar-background {
-      border-width: 1px !important;
-      border-color: var(--focus-outline-color) !important;
-    }
   }
 }
