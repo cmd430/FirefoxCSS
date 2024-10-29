@@ -3,7 +3,8 @@
   #PersonalToolbar {
     transition: min-height 170ms ease-out, max-height 170ms ease-out, visibility 170ms linear;
   }
-  #nav-bar:not(:focus-within) + #PersonalToolbar {
+  #nav-bar:not(:focus-within) + #PersonalToolbar,
+  #nav-bar:has(#urlbar[breakout][breakout-extend]) + #PersonalToolbar {
     min-height: 0.1px !important;
     max-height: 0 !important;
   }
