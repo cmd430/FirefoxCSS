@@ -1,10 +1,24 @@
 // Prefs to unfuck the experience
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("browser.urlbar.openViewOnFocus", false);
+user_pref("browser.urlbar.suggest.addons", false);
 user_pref("browser.urlbar.suggest.bookmark", false);
+user_pref("browser.urlbar.suggest.calculator", false);
+user_pref("browser.urlbar.suggest.clipboard", false);
+user_pref("browser.urlbar.suggest.engines", false);
+user_pref("browser.urlbar.suggest.fakespot", false);
+user_pref("browser.urlbar.suggest.mdn", false);
 user_pref("browser.urlbar.suggest.openpage", false);
-user_pref("browser.urlbar.suggest.topsites", false);
+user_pref("browser.urlbar.suggest.pocket", false);
 user_pref("browser.urlbar.suggest.quickactions", false);
+user_pref("browser.urlbar.suggest.recentsearches", false);
+user_pref("browser.urlbar.suggest.remotetab", false);
+user_pref("browser.urlbar.suggest.searches", false);
+user_pref("browser.urlbar.suggest.topsites", false);
+user_pref("browser.urlbar.suggest.trending", false);
+user_pref("browser.urlbar.suggest.weather", false);
+user_pref("browser.urlbar.suggest.yelp", false);
+user_pref("browser.urlbar.suggest.history", true);
 user_pref("browser.compactmode.show", true);
 user_pref("alerts.useSystemBackend", true);
 user_pref("extensions.unifiedExtensions.enabled", false);
