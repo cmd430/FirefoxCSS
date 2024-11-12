@@ -259,6 +259,7 @@
 }
 @media (-moz-bool-pref: "userChrome.ColoredTabMediaControls") {
   :root {
+    --tab-icon-overlay-fill-blocked: var(--toolbar-field-color);
     --tab-icon-overlay-fill-muted: var(--button-background-color-destructive);
     --tab-icon-overlay-fill-playing: var(--panel-banner-item-update-supported-bgcolor);
     --tab-icon-overlay-fill-crashed: var(--warning-icon-bgcolor);
@@ -268,6 +269,12 @@
     background-color: rgba(0, 0, 0, 0.3) !important;
     box-shadow: 0 0 1px var(--nav-seperator-color) !important;
     cursor: pointer !important;
+  }
+  #TabsToolbar .tab-icon-overlay[activemedia-blocked]:not([crashed]) {
+    fill: var(--tab-icon-overlay-fill-blocked) !important;
+  }
+  #TabsToolbar .tab-icon-overlay[activemedia-blocked]:not([crashed]):hover {
+    box-shadow: 0 0 1px var(--tab-icon-overlay-fill-blocked) !important;
   }
   #TabsToolbar .tab-icon-overlay[soundplaying]:not([crashed]) {
     fill: var(--tab-icon-overlay-fill-playing) !important;
