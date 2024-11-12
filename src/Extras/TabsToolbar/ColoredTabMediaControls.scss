@@ -1,6 +1,7 @@
 // Colored Media Controls on Tab (Mute/Unmute/Playing)
 @media (-moz-bool-pref: "userChrome.ColoredTabMediaControls") {
   :root {
+    --tab-icon-overlay-fill-blocked: var(--toolbar-field-color); // rgb(251, 251, 254)
     --tab-icon-overlay-fill-muted: var(--button-background-color-destructive); // rgb(243, 127, 152)
     --tab-icon-overlay-fill-playing: var(--panel-banner-item-update-supported-bgcolor); //rgb(84, 255, 189)
     --tab-icon-overlay-fill-crashed: var(--warning-icon-bgcolor); // rgb(255, 189, 79)
@@ -12,6 +13,13 @@
     box-shadow: 0 0 1px var(--nav-seperator-color) !important;
     cursor: pointer !important;
 
+    &[activemedia-blocked]:not([crashed]) {
+      fill: var(--tab-icon-overlay-fill-blocked) !important;
+
+      &:hover {
+        box-shadow: 0 0 1px var(--tab-icon-overlay-fill-blocked) !important;
+      }
+    }
     &[soundplaying]:not([crashed]) {
       fill: var(--tab-icon-overlay-fill-playing) !important;
 
