@@ -233,6 +233,18 @@
 
   &[autohide="true"] {
     min-height: unset !important;
+
+    .titlebar-buttonbox-container {
+      visibility: hidden !important;
+    }
+
+    &:not([inactive]) ~ :is(#TabsToolbar, #nav-bar) > .titlebar-buttonbox-container {
+      visibility: visible !important;
+    }
+  }
+
+  #menubar-items #main-menubar {
+    height: 100%;
   }
 
   + #TabsToolbar #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-icon-image[src] ~ .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
