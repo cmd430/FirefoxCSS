@@ -84,7 +84,7 @@
   }
 
   #tabbrowser-tabs {
-    //--tab-line-color: var(--chrome-content-separator-color) !important;
+    min-height: var(--tab-min-height) !important;
 
     &[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > tab.tabbrowser-tab[first-visible-unpinned-tab] {
       margin-inline-start: var(--pin-unpin-edge-padding) !important;
