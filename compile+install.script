@@ -15,16 +15,24 @@ try {
 
   const CSS = css.toString().replace(/@media \(-moz-bool-pref: (userChrome\..+)\)/g, `@media (-moz-bool-pref: "$1")`)
   const FIREFOX_DATA_DIR = process.env.APPDATA + '/Mozilla/Firefox/'
-  const PROFILE = fs.readFileSync(FIREFOX_DATA_DIR + 'installs.ini', {
+  const FIREFOX_PROFILE = fs.readFileSync(FIREFOX_DATA_DIR + 'installs.ini', {
     encoding:'utf8',
     flag:'r'
   }).match(/^Default=(?<profile>.+)$/mi)?.groups.profile
+  const FIREFOX_PROFILE_DIR = `${FIREFOX_DATA_DIR}${FIREFOX_PROFILE}`
 
+  console.debug('Firefox Profile Dir:', FIREFOX_PROFILE_DIR)
+
+  // Write to dist
   fs.writeFileSync('dist/chrome/userChrome.css', CSS)
+  fs.copyFileSync('src/userContent.css', 'dist/chrome/userContent.css')
+  fs.copyFileSync('src/user.js', 'dist/user.js')
 
-  console.log(FIREFOX_DATA_DIR + PROFILE)
-
-  if (PROFILE) fs.copyFileSync('dist/chrome/userChrome.css', FIREFOX_DATA_DIR + PROFILE + '/chrome/userChrome.css')
+  if (FIREFOX_PROFILE) { // write to profile
+    fs.copyFileSync('dist/chrome/userChrome.css', `${FIREFOX_PROFILE_DIR}/chrome/userChrome.css`)
+    fs.copyFileSync('dist/chrome/userContent.css', `${FIREFOX_PROFILE_DIR}/chrome/userContent.css`)
+    fs.copyFileSync('dist/user.js', `${FIREFOX_PROFILE_DIR}/user.js`)
+  }
 } catch (err) {
   console.error(err)
 }
