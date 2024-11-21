@@ -25,6 +25,7 @@ user_pref("alerts.useSystemBackend", true);
 user_pref("extensions.unifiedExtensions.enabled", false);
 user_pref("signon.firefoxRelay.feature", "disabled");
 user_pref("dom.ipc.processPriorityManager.backgroundUsesEcoQoS", false);
+user_pref("widget.windows.window_occlusion_tracking.enabled", false);
 user_pref("browser.tabs.hoverPreview.enabled", false);
 
 
