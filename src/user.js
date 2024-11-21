@@ -29,7 +29,8 @@ user_pref("widget.windows.window_occlusion_tracking.enabled", false);
 user_pref("browser.tabs.hoverPreview.enabled", false);
 user_pref("widget.windows.mica", false);
 user_pref("browser.theme.native-theme", false);
-
+user_pref("browser.urlbar.focusContentDocumentOnEsc", true);
+user_pref("browser.urlbar.trimHttps", false);  // true shows http and hides https
 
 //userChrome Prefs
 user_pref("userChrome.BetterFindBar", true);
