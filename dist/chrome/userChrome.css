@@ -167,6 +167,7 @@
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[visuallyselected] .tab-background {
   box-shadow: none !important;
   border: none !important;
+  outline: none !important;
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[visuallyselected] .tab-background::before, #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[visuallyselected] .tab-background::after {
   opacity: 1 !important;

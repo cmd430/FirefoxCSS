@@ -145,6 +145,7 @@
         .tab-background {
           box-shadow: none !important;
           border: none !important;
+          outline: none !important;
 
           &::before, &::after {
             opacity: 1 !important;
