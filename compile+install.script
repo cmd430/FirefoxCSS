@@ -13,7 +13,7 @@ try {
     }
   })
 
-  const CSS = css.toString().replace(/@media \(-moz-bool-pref: (userChrome\..+)\)/g, `@media (-moz-bool-pref: "$1")`)
+  const CSS = css.toString().replace(/\(-moz-bool-pref: (.+?)\)/g, `(-moz-bool-pref: "$1")`)
   const FIREFOX_DATA_DIR = process.env.APPDATA + '/Mozilla/Firefox/'
   const FIREFOX_PROFILE = fs.readFileSync(FIREFOX_DATA_DIR + 'installs.ini', {
     encoding:'utf8',

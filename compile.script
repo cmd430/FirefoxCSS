@@ -13,7 +13,7 @@ try {
     }
   })
 
-  const CSS = css.toString().replace(/@media \(-moz-bool-pref: (userChrome\..+)\)/g, `@media (-moz-bool-pref: "$1")`)
+  const CSS = css.toString().replace(/\(-moz-bool-pref: (.+?)\)/g, `(-moz-bool-pref: "$1")`)
 
   fs.writeFileSync('dist/chrome/userChrome.css', CSS)
   fs.copyFileSync('src/userContent.css', 'dist/chrome/userContent.css')
