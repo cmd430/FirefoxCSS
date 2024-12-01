@@ -9,6 +9,13 @@
 }
 
 /*
+ * Fix Default Page Background color
+ */
+:is(body) {
+  background-color: rgb(255, 255, 255);
+}
+
+/*
  * New Tab page Ajustments
  */
 @-moz-document url(about:newtab), url(about:home) {
