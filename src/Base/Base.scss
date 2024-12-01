@@ -20,6 +20,10 @@
 @import './Normal.scss';
 @import './Compact.scss';
 @import './Touch.scss';
+
+// Parts
+@import './Sidebar/BetterSidebar.scss';
+
 :root[tabsintitlebar]:-moz-window-inactive {
   .browser-titlebar#TabsToolbar,
   #nav-bar {
