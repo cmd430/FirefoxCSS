@@ -4,6 +4,7 @@
     .browserContainer {
       position: relative;
     }
+
     findbar {
       position: absolute;
       top: 0;
@@ -19,6 +20,12 @@
       }
       .findbar-container {
         min-width: 0 !important;
+      }
+    }
+
+    @media (-moz-bool-pref: "sidebar.verticalTabs") {
+      findbar {
+        background-image: unset !important;
       }
     }
   }
