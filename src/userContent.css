@@ -11,7 +11,7 @@
 /*
  * Fix Default Page Background color
  */
- :is(html) {
+ :is(body) {
   background-color: rgb(255, 255, 255);
 }
 
