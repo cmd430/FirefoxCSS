@@ -60,6 +60,31 @@
   margin: -5px 1px 0 0;
 }
 
+@media (-moz-bool-pref: "sidebar.revamp") {
+  #tabbrowser-tabbox {
+    box-shadow: unset !important;
+  }
+  #sidebar-main,
+#sidebar-box {
+    outline: 1px solid var(--chrome-content-separator-color);
+  }
+  #sidebar-box {
+    padding: 0 !important;
+  }
+  #sidebar-box #sidebar {
+    border-radius: unset !important;
+    box-shadow: unset !important;
+    border: unset !important;
+  }
+  moz-card, moz-card::part(summary) {
+    border-radius: var(--border-radius-small) !important;
+  }
+  :host,
+moz-card {
+    --card-border-radius: var(--border-radius-small) !important;
+    --card-padding: var(--space-small) !important;
+  }
+}
 :root[tabsintitlebar]:-moz-window-inactive .browser-titlebar#TabsToolbar,
 :root[tabsintitlebar]:-moz-window-inactive #nav-bar {
   opacity: var(--inactive-titlebar-opacity) !important;
@@ -270,6 +295,11 @@
   }
   #browser findbar .findbar-container {
     min-width: 0 !important;
+  }
+}
+@media (-moz-bool-pref: "userChrome.BetterFindBar") and (-moz-bool-pref: "sidebar.verticalTabs") {
+  #browser findbar {
+    background-image: unset !important;
   }
 }
 @media (-moz-bool-pref: "userChrome.ColoredTabMediaControls") {
