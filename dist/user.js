@@ -1,7 +1,15 @@
 // Prefs to unfuck the experience
+user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+user_pref("browser.compactmode.show", true);
 user_pref("svg.context-properties.content.enabled", true);
-user_pref("browser.urlbar.openViewOnFocus", false);
+user_pref("alerts.useSystemBackend", true);
+user_pref("signon.firefoxRelay.feature", "disabled");
+user_pref("dom.ipc.processPriorityManager.backgroundUsesEcoQoS", false);
+user_pref("widget.windows.window_occlusion_tracking.enabled", false);
+user_pref("dom.timeout.enable_budget_timer_throttling", false);
+user_pref("dom.min_background_timeout_value_without_budget_throttling", 10);
+user_pref("browser.tabs.hoverPreview.enabled", false);
 user_pref("browser.urlbar.suggest.addons", false);
 user_pref("browser.urlbar.suggest.bookmark", false);
 user_pref("browser.urlbar.suggest.calculator", false);
@@ -20,17 +28,11 @@ user_pref("browser.urlbar.suggest.trending", false);
 user_pref("browser.urlbar.suggest.weather", false);
 user_pref("browser.urlbar.suggest.yelp", false);
 user_pref("browser.urlbar.suggest.history", true);
-user_pref("browser.compactmode.show", true);
-user_pref("alerts.useSystemBackend", true);
-user_pref("extensions.unifiedExtensions.enabled", false);
-user_pref("signon.firefoxRelay.feature", "disabled");
-user_pref("dom.ipc.processPriorityManager.backgroundUsesEcoQoS", false);
-user_pref("widget.windows.window_occlusion_tracking.enabled", false);
-user_pref("browser.tabs.hoverPreview.enabled", false);
-user_pref("browser.urlbar.focusContentDocumentOnEsc", true);
 user_pref("browser.urlbar.trimHttps", true);
-//user_pref("widget.windows.mica", false);
-//user_pref("browser.theme.native-theme", false);
+user_pref("browser.urlbar.showSearchTerms.enabled", false);
+user_pref("browser.urlbar.focusContentDocumentOnEsc", true);
+user_pref("browser.theme.native-theme", false);
+user_pref("widget.windows.mica", false);
 
 //userChrome Prefs
 user_pref("userChrome.BetterFindBar", true);
