@@ -1,0 +1,34 @@
+@media (-moz-bool-pref: "userChrome.CompactMenus") {
+  #unified-extensions-view {
+    --uei-icon-size: 24px !important;
+
+    .unified-extensions-list {
+      display: none;
+    }
+
+    .panel-subview-body {
+      padding: 5px 0 !important;
+    }
+
+    #unified-extensions-area {
+      .unified-extensions-item-message-deck {
+        display: none;
+      }
+
+      .unified-extensions-item-contents {
+        width: 100%;
+
+        .unified-extensions-item-name {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 98%;
+          text-wrap: nowrap;
+        }
+      }
+
+      toolbaritem {
+        height: 34px;
+      }
+    }
+  }
+}
