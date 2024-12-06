@@ -15,6 +15,10 @@
   --chrome-content-separator-color: rgb(15, 15, 15) !important;
 }
 
+:root[sizemode=normal] #TabsToolbar {
+  margin-top: 1px !important;
+}
+
 :root {
   --tab-min-height: 36px !important;
   --tab-spacer-width: 18px;
@@ -35,19 +39,6 @@
     --tab-min-height: 25px !important;
   }
 }
-:root[uidensity=compact] #TabsToolbar {
-  appearance: auto !important;
-  -moz-default-appearance: none !important;
-}
-:root[uidensity=compact] #TabsToolbar toolbarbutton.titlebar-button {
-  padding: 4px 17px !important;
-}
-:root[uidensity=compact] #tabbrowser-tabs:not([secondarytext-unsupported]) tab.tabbrowser-tab:not(:hover) .tab-icon-stack:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked], [crashed]) > :not(.tab-icon-overlay) {
-  opacity: 0 !important;
-}
-:root[uidensity=compact] #tabbrowser-tabs:not([secondarytext-unsupported]) tab.tabbrowser-tab:not(:hover) .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-  opacity: 1 !important;
-}
 
 :root[uidensity=touch] {
   --tab-min-height: 41px !important;
@@ -56,8 +47,24 @@
   --toolbarbutton-outer-padding-precalc: calc(var(--toolbarbutton-outer-padding) * 2);
   --pin-unpin-edge-padding: var(--tab-spacer-width);
 }
-:root[uidensity=touch] #nav-bar #urlbar[breakout][breakout-extend] > #urlbar-input-container image#urlbar-go-button {
-  margin: -5px 1px 0 0;
+
+#toolbar-menubar {
+  box-shadow: 0 1px 0 var(--tab-separator-color, rgba(0, 0, 0, 0.3)) !important;
+}
+#toolbar-menubar[autohide=true] {
+  min-height: unset !important;
+}
+#toolbar-menubar[autohide=true] .titlebar-buttonbox-container {
+  visibility: hidden !important;
+}
+#toolbar-menubar[autohide=true]:not([inactive]) ~ :is(#TabsToolbar, #nav-bar) > .titlebar-buttonbox-container {
+  visibility: visible !important;
+}
+#toolbar-menubar #menubar-items #main-menubar {
+  height: 100%;
+}
+#toolbar-menubar + #TabsToolbar #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-icon-image[src] ~ .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
+  padding: 0 !important;
 }
 
 @media (-moz-bool-pref: "sidebar.revamp") {
@@ -85,20 +92,26 @@ moz-card {
     --card-padding: var(--space-small) !important;
   }
 }
-:root[tabsintitlebar]:-moz-window-inactive .browser-titlebar#TabsToolbar,
-:root[tabsintitlebar]:-moz-window-inactive #nav-bar {
-  opacity: var(--inactive-titlebar-opacity) !important;
+#TabsToolbar .tab-icon-overlay[soundplaying]:not([crashed]), #TabsToolbar .tab-icon-overlay[muted]:not([crashed]), #TabsToolbar .tab-icon-overlay[activemedia-blocked]:not([crashed]) {
+  stroke: var(--tab-icon-overlay-stroke, rgb(0, 0, 0)) !important;
+  color: var(--tab-icon-overlay-fill, rgb(255, 255, 255)) !important;
+  fill: var(--tab-icon-overlay-fill, rgb(255, 255, 255)) !important;
+}
+#TabsToolbar .tab-icon-overlay:not([crashed]):is([pinned], [sharing]) {
+  top: 0 !important;
+  inset-inline-end: 0 !important;
+}
+
+#nav-bar {
+  position: unset;
+}
+#nav-bar:not([tabs-hidden=true]) {
+  box-shadow: 0 -1px 0 var(--tab-separator-color, rgba(0, 0, 0, 0.3)) !important;
 }
 
 #TabsToolbar {
+  appearance: auto !important;
   z-index: 1;
-}
-#TabsToolbar .titlebar-buttonbox-container {
-  height: calc(100% - 1px);
-}
-#TabsToolbar .titlebar-buttonbox-container .titlebar-close:hover {
-  background-color: rgb(193, 42, 28) !important;
-  stroke: rgb(250, 238, 237) !important;
 }
 #TabsToolbar #tabbrowser-arrowscrollbox {
   max-height: var(--tab-min-height);
@@ -106,39 +119,6 @@ moz-card {
 #TabsToolbar #tabbrowser-arrowscrollbox::part(scrollbutton-up), #TabsToolbar #tabbrowser-arrowscrollbox::part(scrollbutton-down) {
   border: 0 !important;
   padding: 0 !important;
-}
-#TabsToolbar toolbarbutton[id=firefox-view-button] {
-  margin: 0 !important;
-  padding: 0 !important;
-  position: relative;
-}
-#TabsToolbar toolbarbutton[id=firefox-view-button]::before {
-  content: "";
-  width: 100%;
-  height: 2px;
-  top: 0;
-  left: 0;
-  position: absolute;
-  z-index: 2;
-}
-#TabsToolbar toolbarbutton[id=firefox-view-button]:hover::before {
-  background: var(--toolbarbutton-hover-background);
-}
-#TabsToolbar toolbarbutton[id=firefox-view-button][open] .toolbarbutton-icon {
-  background: var(--toolbar-bgcolor) !important;
-  z-index: 1;
-}
-#TabsToolbar toolbarbutton[id=firefox-view-button][open]::before {
-  background: linear-gradient(90deg, #9059FF 0%, #FF4AA2 52.08%, #FFBD4F 100%);
-}
-#TabsToolbar toolbarbutton[id=firefox-view-button] .toolbarbutton-icon {
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-#TabsToolbar toolbarbutton[id=firefox-view-button] + #tabbrowser-tabs {
-  border-inline-start: 1px solid var(--tab-separator-color) !important;
-  padding-inline-start: 0 !important;
-  margin-inline-start: 0 !important;
 }
 #TabsToolbar #tabbrowser-tabs {
   min-height: var(--tab-min-height) !important;
@@ -161,7 +141,6 @@ moz-card {
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background {
   border-radius: 0 !important;
   margin: 0 !important;
-  border-bottom: 1px solid var(--tab-separator-color) !important;
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background::before, #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background::after {
   background: var(--tab-separator-color);
@@ -182,6 +161,10 @@ moz-card {
   margin: 0 !important;
   height: 2px;
   background-color: transparent;
+}
+#TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab:not([visuallyselected]):hover .tab-background {
+  min-height: calc(var(--tab-min-height) - 1px) !important;
+  height: calc(var(--tab-min-height) - 1px);
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab:not([first-visible-tab]) .tab-background::before {
   transform: translateX(-1px);
@@ -218,62 +201,82 @@ moz-card {
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[visuallyselected] .tab-background {
   background: var(--toolbar-bgcolor) !important;
 }
-#TabsToolbar .titlebar-spacer[type=pre-tabs] {
-  border-right: 1px solid var(--tab-separator-color) !important;
-}
-#TabsToolbar .titlebar-spacer[type=pre-tabs],
-#TabsToolbar .titlebar-spacer[type=post-tabs] {
-  width: var(--tab-spacer-width) !important;
-}
-#TabsToolbar .tab-icon-overlay[soundplaying]:not([crashed]),
-#TabsToolbar .tab-icon-overlay[muted]:not([crashed]),
-#TabsToolbar .tab-icon-overlay[activemedia-blocked]:not([crashed]) {
-  stroke: var(--tab-icon-overlay-stroke, rgb(0, 0, 0)) !important;
-  color: var(--tab-icon-overlay-fill, rgb(255, 255, 255)) !important;
-  fill: var(--tab-icon-overlay-fill, rgb(255, 255, 255)) !important;
-}
-#TabsToolbar .tab-icon-overlay:not([crashed]):is([pinned], [sharing]) {
-  top: 0 !important;
-  inset-inline-end: 0 !important;
-}
-#TabsToolbar toolbarbutton#tabs-newtab-button, #TabsToolbar toolbarbutton#new-tab-button, #TabsToolbar toolbarbutton#alltabs-button {
-  --toolbarbutton-inner-padding: var(--toolbarbutton-inner-padding-precalc) !important;
-  margin: 0 !important;
-  padding: 0 var(--toolbarbutton-outer-padding-precalc) !important;
-}
-
-:root[sizemode=normal] #TabsToolbar {
-  margin-top: 1px !important;
-}
 
 :root[sizemode=maximized] #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[first-visible-tab]:hover .tab-background::before, :root[sizemode=maximized] #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[first-visible-tab] .tab-background::before {
   opacity: 0 !important;
 }
 
-#toolbar-menubar {
-  box-shadow: 0 1px 0 var(--tab-separator-color, rgba(0, 0, 0, 0.3)) !important;
+#TabsToolbar .titlebar-spacer[type=pre-tabs] {
+  border-right: 1px solid var(--tab-separator-color) !important;
 }
-#toolbar-menubar[autohide=true] {
-  min-height: unset !important;
-}
-#toolbar-menubar[autohide=true] .titlebar-buttonbox-container {
-  visibility: hidden !important;
-}
-#toolbar-menubar[autohide=true]:not([inactive]) ~ :is(#TabsToolbar, #nav-bar) > .titlebar-buttonbox-container {
-  visibility: visible !important;
-}
-#toolbar-menubar #menubar-items #main-menubar {
-  height: 100%;
-}
-#toolbar-menubar + #TabsToolbar #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-icon-image[src] ~ .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-  padding: 0 !important;
+#TabsToolbar .titlebar-spacer[type=pre-tabs], #TabsToolbar .titlebar-spacer[type=post-tabs] {
+  width: var(--tab-spacer-width) !important;
 }
 
-#nav-bar {
-  position: unset;
+#TabsToolbar toolbarbutton[id=firefox-view-button] {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
 }
-#nav-bar:not([tabs-hidden=true]) {
-  box-shadow: 0 -1px 0 var(--tab-separator-color, rgba(0, 0, 0, 0.3)) !important;
+#TabsToolbar toolbarbutton[id=firefox-view-button]::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 2;
+}
+#TabsToolbar toolbarbutton[id=firefox-view-button]:hover::before {
+  background: var(--toolbarbutton-hover-background);
+}
+#TabsToolbar toolbarbutton[id=firefox-view-button][open] .toolbarbutton-icon {
+  background: var(--toolbar-bgcolor) !important;
+  z-index: 1;
+}
+#TabsToolbar toolbarbutton[id=firefox-view-button][open]::before {
+  background: linear-gradient(90deg, #9059FF 0%, #FF4AA2 52.08%, #FFBD4F 100%);
+}
+#TabsToolbar toolbarbutton[id=firefox-view-button] .toolbarbutton-icon {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+#TabsToolbar toolbarbutton:not(.titlebar-button) {
+  --toolbarbutton-inner-padding: var(--toolbarbutton-inner-padding-precalc) !important;
+  margin: 0 !important;
+  padding: 0 var(--toolbarbutton-outer-padding-precalc) !important;
+}
+
+:root[uidensity=compact] #TabsToolbar toolbarbutton.titlebar-button {
+  padding: 4px 17px !important;
+}
+
+#TabsToolbar .titlebar-buttonbox-container {
+  height: calc(100% - 1px);
+}
+#TabsToolbar .titlebar-buttonbox-container .titlebar-close:hover {
+  background-color: rgb(193, 42, 28) !important;
+  stroke: rgb(250, 238, 237) !important;
+}
+
+#urlbar[breakout][breakout-extend] {
+  margin-left: 0 !important;
+  width: var(--urlbar-width) !important;
+  margin-top: calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2) !important;
+}
+#urlbar[breakout][breakout-extend] .urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  padding-block: var(--urlbar-container-padding) !important;
+  padding-inline: var(--urlbar-container-padding) !important;
+}
+
+#urlbar[breakout][breakout-extend] > :is(#urlbar-input-container, .urlbar-input-container) {
+  height: var(--urlbar-height) !important;
+  padding-block: 1px !important;
+  padding-inline: 1px !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
 }
 
 @media (-moz-bool-pref: "userChrome.BetterFindBar") {
@@ -646,5 +649,9 @@ moz-card {
 @media (-moz-bool-pref: "userChrome.DisableInactiveFadeout") {
   :root[tabsintitlebar]:-moz-window-inactive {
     --inactive-titlebar-opacity: 1 !important;
+  }
+  :root[tabsintitlebar]:-moz-window-inactive .browser-titlebar#TabsToolbar,
+:root[tabsintitlebar]:-moz-window-inactive #nav-bar {
+    opacity: var(--inactive-titlebar-opacity) !important;
   }
 }
