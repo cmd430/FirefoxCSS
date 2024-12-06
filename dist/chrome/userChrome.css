@@ -67,31 +67,6 @@
   padding: 0 !important;
 }
 
-@media (-moz-bool-pref: "sidebar.revamp") {
-  #tabbrowser-tabbox {
-    box-shadow: unset !important;
-  }
-  #sidebar-main,
-#sidebar-box {
-    outline: 1px solid var(--chrome-content-separator-color);
-  }
-  #sidebar-box {
-    padding: 0 !important;
-  }
-  #sidebar-box #sidebar {
-    border-radius: unset !important;
-    box-shadow: unset !important;
-    border: unset !important;
-  }
-  moz-card, moz-card::part(summary) {
-    border-radius: var(--border-radius-small) !important;
-  }
-  :host,
-moz-card {
-    --card-border-radius: var(--border-radius-small) !important;
-    --card-padding: var(--space-small) !important;
-  }
-}
 #TabsToolbar .tab-icon-overlay[soundplaying]:not([crashed]), #TabsToolbar .tab-icon-overlay[muted]:not([crashed]), #TabsToolbar .tab-icon-overlay[activemedia-blocked]:not([crashed]) {
   stroke: var(--tab-icon-overlay-stroke, rgb(0, 0, 0)) !important;
   color: var(--tab-icon-overlay-fill, rgb(255, 255, 255)) !important;
@@ -279,6 +254,31 @@ moz-card {
   border-bottom-right-radius: 0px !important;
 }
 
+@media (-moz-bool-pref: "userChrome.Experiments") and (-moz-bool-pref: "sidebar.revamp") {
+  #tabbrowser-tabbox {
+    box-shadow: unset !important;
+  }
+  #sidebar-main,
+#sidebar-box {
+    outline: 1px solid var(--chrome-content-separator-color);
+  }
+  #sidebar-box {
+    padding: 0 !important;
+  }
+  #sidebar-box #sidebar {
+    border-radius: unset !important;
+    box-shadow: unset !important;
+    border: unset !important;
+  }
+  moz-card, moz-card::part(summary) {
+    border-radius: var(--border-radius-small) !important;
+  }
+  :host,
+moz-card {
+    --card-border-radius: var(--border-radius-small) !important;
+    --card-padding: var(--space-small) !important;
+  }
+}
 @media (-moz-bool-pref: "userChrome.BetterFindBar") {
   #browser .browserContainer {
     position: relative;
