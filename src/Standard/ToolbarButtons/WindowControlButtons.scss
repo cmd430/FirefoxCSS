@@ -1,0 +1,14 @@
+:root[uidensity="compact"] {
+  #TabsToolbar toolbarbutton.titlebar-button {
+    padding: 4px 17px !important;
+  }
+}
+
+#TabsToolbar .titlebar-buttonbox-container {
+  height: calc(100% - 1px);
+
+  .titlebar-close:hover {
+    background-color: rgb(193, 42, 28) !important;
+    stroke: rgb(250, 238, 237) !important;
+  }
+}

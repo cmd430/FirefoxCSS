@@ -1,7 +1,25 @@
-// VERSION: 18/01/23
-
 // Base Style to Get basic Photon look back
-@import './Base/Base.scss';
+@import './Standard/Base.scss';
+@import './Standard/Normal.scss';
+@import './Standard/Compact.scss';
+@import './Standard/Touch.scss';
+
+
+// Style Parts
+@import './Standard/Menubar/BetterMenubar.scss';
+@import './Standard/Sidebar/BetterSidebar.scss';
+@import './Standard/Tabs/MediaButtons.scss';
+@import './Standard/Tabs/SquareTabs.scss';
+@import './Standard/Tabs/TabSpacer.scss';
+@import './Standard/ToolbarButtons/FirefoxView.scss';
+@import './Standard/ToolbarButtons/GenrealButtons.scss';
+@import './Standard/ToolbarButtons/WindowControlButtons.scss';
+@import './Standard/Urlbar/MiniMegaBar.scss';
+
+
+// Experiments
+@import './Standard/Experiments/Testing.scss';
+
 
 // Extras
 @import './Extras/FindBar/BetterFindBar.scss';

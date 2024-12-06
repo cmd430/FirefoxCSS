@@ -1,0 +1,6 @@
+// fix toolbar button size
+#TabsToolbar toolbarbutton:not(.titlebar-button) {
+  --toolbarbutton-inner-padding: var(--toolbarbutton-inner-padding-precalc) !important;
+  margin: 0 !important;
+  padding: 0 var(--toolbarbutton-outer-padding-precalc) !important;
+}

@@ -1,0 +1,136 @@
+// under tab seperator line
+#nav-bar {
+  position: unset;
+
+  &:not([tabs-hidden="true"]) {
+    box-shadow: 0 calc(-1 * 1px) 0 var(--tab-separator-color, rgba(0,0,0,.3)) !important;
+  }
+}
+
+#TabsToolbar {
+  appearance: auto !important;
+  z-index: 1;
+
+  // when too many tabs
+  #tabbrowser-arrowscrollbox {
+    max-height: var(--tab-min-height);
+
+    &::part(scrollbutton-up), &::part(scrollbutton-down) {
+      border: 0 !important;
+      padding: 0 !important;
+    }
+  }
+
+  // actual tabs
+  #tabbrowser-tabs {
+    min-height: var(--tab-min-height) !important;
+
+    &[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > tab.tabbrowser-tab[first-visible-unpinned-tab] {
+      margin-inline-start: var(--pin-unpin-edge-padding) !important;
+    }
+    &:not([secondarytext-unsupported]) tab.tabbrowser-tab:not(:hover) {
+      & .tab-icon-stack:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) > :not(.tab-icon-overlay) {
+        opacity: 1 !important;
+      }
+      & .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
+        opacity: 0 !important;
+      }
+    }
+
+    tab.tabbrowser-tab {
+      padding-inline: 0px !important;
+
+      .tab-stack { // fix colorways
+        --lwt-tab-line-color: inital !important;
+      }
+
+      .tab-background {
+        border-radius: 0 !important;
+        margin: 0 !important;
+
+        &::before, &::after {
+          background: var(--tab-separator-color);
+          content: '';
+          font-size: 0;
+          display: block;
+          width: 1px;
+          overflow: hidden;
+          position: absolute;
+          height: 100%;
+          opacity: 0.5 !important;
+        }
+        &::after {
+          top: 0;
+          right: 0;
+        }
+
+        .tab-context-line {
+          margin: 0 !important;
+          height: 2px;
+          background-color: transparent;
+        }
+      }
+
+      &:not([visuallyselected]):hover .tab-background {
+        min-height: calc(var(--tab-min-height) - 1px) !important;
+        height: calc(var(--tab-min-height) - 1px);
+      }
+
+      &:not([first-visible-tab]) .tab-background::before {
+        transform: translateX(-1px);
+      }
+      &[visuallyselected] {
+        z-index: 1;
+
+        .tab-background {
+          box-shadow: none !important;
+          border: none !important;
+          outline: none !important;
+
+          &::before, &::after {
+            opacity: 1 !important;
+          }
+        }
+      }
+      &[multiselected],
+      &[multiselected][selected] {
+        .tab-background {
+          outline-offset: -2px !important;
+          &::after,
+          &:hover::after {
+            opacity: 0 !important;
+          }
+        }
+
+      }
+      &:hover .tab-background {
+        &::before, &::after {
+          opacity: 0.8 !important;
+        }
+      }
+      &[usercontextid]:not([visuallyselected]):not(:hover) .tab-context-line {
+        opacity: 0.5;
+      }
+      &:not([usercontextid]):hover .tab-context-line {
+        background-color: var(--toolbarbutton-hover-background);
+      }
+      &[visuallyselected]:not([usercontextid]) .tab-context-line {
+        background-color: var(--tab-loading-fill);
+      }
+      &[visuallyselected] .tab-background {
+        background: var(--toolbar-bgcolor) !important;
+      }
+    }
+  }
+}
+
+// hide first tab left line when maximized mode
+:root[sizemode="maximized"] {
+  #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[first-visible-tab] {
+    &:hover .tab-background, .tab-background {
+      &::before {
+        opacity: 0 !important;
+      }
+    }
+  }
+}

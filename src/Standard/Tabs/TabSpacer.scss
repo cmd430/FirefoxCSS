@@ -1,0 +1,12 @@
+#TabsToolbar .titlebar-spacer {
+
+  &[type="pre-tabs"] {
+    border-right: 1px solid var(--tab-separator-color) !important;
+  }
+
+  &[type="pre-tabs"],
+  &[type="post-tabs"] {
+    width: var(--tab-spacer-width) !important;
+  }
+
+}

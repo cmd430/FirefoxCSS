@@ -2,5 +2,10 @@
 @media (-moz-bool-pref: "userChrome.DisableInactiveFadeout") {
   :root[tabsintitlebar]:-moz-window-inactive {
     --inactive-titlebar-opacity: 1 !important;
+
+    .browser-titlebar#TabsToolbar,
+    #nav-bar {
+      opacity: var(--inactive-titlebar-opacity) !important;
+    }
   }
 }

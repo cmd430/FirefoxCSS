@@ -1,0 +1,11 @@
+:root[uidensity="compact"] {
+  --tab-min-height: 31px !important;
+  --tab-spacer-width: 16px;
+  --toolbarbutton-inner-padding-precalc: calc((var(--tab-min-height) / 8) / 2) !important;
+  --toolbarbutton-outer-padding-precalc: calc(var(--toolbarbutton-outer-padding) * 1.5);
+  --pin-unpin-edge-padding: var(--tab-spacer-width);
+
+  @media (-moz-bool-pref: "userChrome.UltraCompact") { // Ultra Compact Mode
+    --tab-min-height: 25px !important;
+  }
+}
