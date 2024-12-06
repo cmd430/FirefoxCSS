@@ -9,9 +9,9 @@
 }
 
 /*
- * New Tab page Ajustments
+ * New Tab page adjustments
  */
-@-moz-document url(about:newtab), url(about:home) {
+@-moz-document url-prefix(about:newtab), url-prefix(about:home) {
   .top-site-inner a + div {
     position: absolute;
     top: 21px;
