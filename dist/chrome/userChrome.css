@@ -647,11 +647,11 @@ moz-card {
   }
 }
 @media (-moz-bool-pref: "userChrome.DisableInactiveFadeout") {
-  :root[tabsintitlebar]:-moz-window-inactive {
+  :root:-moz-window-inactive {
     --inactive-titlebar-opacity: 1 !important;
   }
-  :root[tabsintitlebar]:-moz-window-inactive .browser-titlebar#TabsToolbar,
-:root[tabsintitlebar]:-moz-window-inactive #nav-bar {
+  :root:-moz-window-inactive .browser-titlebar#TabsToolbar,
+:root:-moz-window-inactive #nav-bar {
     opacity: var(--inactive-titlebar-opacity) !important;
   }
 }
