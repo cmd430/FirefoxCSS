@@ -31,6 +31,12 @@ user_pref("browser.urlbar.showSearchTerms.enabled", false);
 user_pref("browser.urlbar.focusContentDocumentOnEsc", true);
 user_pref("browser.theme.native-theme", false);
 user_pref("widget.windows.mica", false);
+user_pref("gfx.font_rendering.cleartype.always_use_for_content", true);
+user_pref("gfx.font_rendering.cleartype_params.enhanced_contrast", 75);
+user_pref("gfx.font_rendering.cleartype_params.rendering_mode", 5);
+user_pref("gfx.font_rendering.cleartype_params.gamma", 1750);
+user_pref("gfx.use_text_smoothing_setting", true);
+
 
 //userChrome Prefs
 user_pref("userChrome.BetterFindBar", true);
