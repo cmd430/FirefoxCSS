@@ -12,6 +12,9 @@
  * New Tab page adjustments
  */
 @-moz-document url-prefix(about:newtab), url-prefix(about:home) {
+  .top-sites-list-wrapper {
+    --size-item-large: 40px;
+  }
   .top-site-inner a + div {
     position: absolute;
     top: 21px;
