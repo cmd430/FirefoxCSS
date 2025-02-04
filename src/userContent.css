@@ -15,6 +15,9 @@
   .top-sites-list-wrapper {
     --size-item-large: 40px;
   }
+  .top-site-outer {
+    margin-block-end: unset !important;
+  }
   .top-site-inner a + div {
     position: absolute;
     top: 21px;
