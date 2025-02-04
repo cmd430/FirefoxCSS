@@ -5,6 +5,13 @@
   --toolbarbutton-outer-padding-precalc: calc(var(--toolbarbutton-outer-padding) * 1.5);
   --pin-unpin-edge-padding: var(--tab-spacer-width);
 
+  #TabsToolbar .tab-audio-button {
+    --icon-size-default: 10px !important;
+    --button-size-icon-small: 18px !important;
+    --button-min-height-small: 18px !important;
+    margin-top: -4px !important;
+  }
+
   @media (-moz-bool-pref: "userChrome.UltraCompact") { // Ultra Compact Mode
     --tab-min-height: 25px !important;
   }

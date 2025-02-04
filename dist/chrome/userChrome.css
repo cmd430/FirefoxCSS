@@ -34,6 +34,12 @@
   --toolbarbutton-outer-padding-precalc: calc(var(--toolbarbutton-outer-padding) * 1.5);
   --pin-unpin-edge-padding: var(--tab-spacer-width);
 }
+:root[uidensity=compact] #TabsToolbar .tab-audio-button {
+  --icon-size-default: 10px !important;
+  --button-size-icon-small: 18px !important;
+  --button-min-height-small: 18px !important;
+  margin-top: -4px !important;
+}
 @media (-moz-bool-pref: "userChrome.UltraCompact") {
   :root[uidensity=compact] {
     --tab-min-height: 25px !important;
@@ -65,16 +71,6 @@
 }
 #toolbar-menubar + #TabsToolbar #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-icon-image[src] ~ .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
   padding: 0 !important;
-}
-
-#TabsToolbar .tab-icon-overlay[soundplaying]:not([crashed]), #TabsToolbar .tab-icon-overlay[muted]:not([crashed]), #TabsToolbar .tab-icon-overlay[activemedia-blocked]:not([crashed]) {
-  stroke: var(--tab-icon-overlay-stroke, rgb(0, 0, 0)) !important;
-  color: var(--tab-icon-overlay-fill, rgb(255, 255, 255)) !important;
-  fill: var(--tab-icon-overlay-fill, rgb(255, 255, 255)) !important;
-}
-#TabsToolbar .tab-icon-overlay:not([crashed]):is([pinned], [sharing]) {
-  top: 0 !important;
-  inset-inline-end: 0 !important;
 }
 
 #nav-bar {
@@ -312,35 +308,20 @@ moz-card {
     --tab-icon-overlay-fill-playing: var(--panel-banner-item-update-supported-bgcolor);
     --tab-icon-overlay-fill-crashed: var(--warning-icon-bgcolor);
   }
-  #TabsToolbar .tab-icon-overlay {
-    border: none !important;
-    background-color: rgba(0, 0, 0, 0.3) !important;
-    box-shadow: 0 0 1px var(--nav-seperator-color) !important;
+  #TabsToolbar .tab-audio-button {
     cursor: pointer !important;
   }
-  #TabsToolbar .tab-icon-overlay[activemedia-blocked]:not([crashed]) {
-    fill: var(--tab-icon-overlay-fill-blocked) !important;
+  #TabsToolbar .tab-audio-button[activemedia-blocked]:not([crashed]) {
+    --button-icon-fill: var(--tab-icon-overlay-fill-blocked) !important;
   }
-  #TabsToolbar .tab-icon-overlay[activemedia-blocked]:not([crashed]):hover {
-    box-shadow: 0 0 1px var(--tab-icon-overlay-fill-blocked) !important;
+  #TabsToolbar .tab-audio-button[soundplaying]:not([crashed]) {
+    --button-icon-fill: var(--tab-icon-overlay-fill-playing) !important;
   }
-  #TabsToolbar .tab-icon-overlay[soundplaying]:not([crashed]) {
-    fill: var(--tab-icon-overlay-fill-playing) !important;
+  #TabsToolbar .tab-audio-button[muted]:not([crashed]) {
+    --button-icon-fill: var(--tab-icon-overlay-fill-muted) !important;
   }
-  #TabsToolbar .tab-icon-overlay[soundplaying]:not([crashed]):hover {
-    box-shadow: 0 0 1px var(--tab-icon-overlay-fill-playing) !important;
-  }
-  #TabsToolbar .tab-icon-overlay[muted]:not([crashed]) {
-    fill: var(--tab-icon-overlay-fill-muted) !important;
-  }
-  #TabsToolbar .tab-icon-overlay[muted]:not([crashed]):hover {
-    box-shadow: 0 0 1px var(--tab-icon-overlay-fill-muted) !important;
-  }
-  #TabsToolbar .tab-icon-overlay[crashed] {
-    fill: var(--tab-icon-overlay-fill-crashed) !important;
-  }
-  #TabsToolbar .tab-icon-overlay[crashed]:hover {
-    box-shadow: 0 0 1px var(--tab-icon-overlay-fill-crashed) !important;
+  #TabsToolbar .tab-audio-button[crashed] {
+    --button-icon-fill: var(--tab-icon-overlay-fill-crashed) !important;
   }
 }
 @media (-moz-bool-pref: "userChrome.RoundedBackButton") {
