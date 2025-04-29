@@ -20,13 +20,18 @@
   }
   .top-site-inner a + div {
     position: absolute;
-    top: 21px;
-    right: -2px;
+    top: 8px;
+    right: 21px;
   }
   .top-site-inner a + div > .context-menu-button.icon {
-    border-radius: 0px 7px 0px 4px;
+    border-radius: 12px !important;
+    /*border-top-right-radius: 12px !important;*/
+    overflow: hidden !important;
   }
   .top-site-inner a + div > .context-menu {
-    top: -20px !important;
+    top: 12px !important;
+  }
+  .top-site-inner a > div > .icon.icon-pin-small {
+    margin: 4px;
   }
 }
