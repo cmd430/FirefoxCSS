@@ -31,6 +31,8 @@ user_pref("browser.urlbar.showSearchTerms.enabled", false);
 user_pref("browser.urlbar.focusContentDocumentOnEsc", true);
 user_pref("browser.theme.native-theme", false);
 user_pref("widget.windows.mica", false);
+user_pref("widget.windows.mica.popups", 2);
+user_pref("widget.windows.mica.toplevel-backdrop", 1);
 user_pref("gfx.font_rendering.cleartype.always_use_for_content", true);
 user_pref("gfx.font_rendering.cleartype_params.enhanced_contrast", 75);
 user_pref("gfx.font_rendering.cleartype_params.rendering_mode", 5);
