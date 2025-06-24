@@ -255,7 +255,7 @@
     box-shadow: unset !important;
   }
   #sidebar-main,
-#sidebar-box {
+  #sidebar-box {
     outline: 1px solid var(--chrome-content-separator-color);
   }
   #sidebar-box {
@@ -270,7 +270,7 @@
     border-radius: var(--border-radius-small) !important;
   }
   :host,
-moz-card {
+  moz-card {
     --card-border-radius: var(--border-radius-small) !important;
     --card-padding: var(--space-small) !important;
   }
@@ -338,7 +338,7 @@ moz-card {
     transition: min-height 170ms ease-out, max-height 170ms ease-out, visibility 170ms linear;
   }
   #nav-bar:not(:focus-within) + #PersonalToolbar,
-#nav-bar:has(#urlbar[breakout][breakout-extend]) + #PersonalToolbar {
+  #nav-bar:has(#urlbar[breakout][breakout-extend]) + #PersonalToolbar {
     min-height: 0.1px !important;
     max-height: 0 !important;
   }
@@ -370,16 +370,16 @@ moz-card {
     padding-inline-start: var(--arrowpanel-menuicon-padding) !important;
   }
   #panelMenu_bookmarksMenu .subviewbutton[disabled=true] .toolbarbutton-text,
-#appMenu_historyMenu .subviewbutton[disabled=true] .toolbarbutton-text {
+  #appMenu_historyMenu .subviewbutton[disabled=true] .toolbarbutton-text {
     padding-inline-start: var(--arrowpanel-menublank-padding) !important;
   }
   #appmenu-developer-tools-view .subviewbutton image,
-#PanelUI-helpItems .subviewbutton image {
+  #PanelUI-helpItems .subviewbutton image {
     width: 16px !important;
     height: 16px !important;
   }
   #appMenu-multiView .subviewbutton::before,
-#appMenu-proton-update-banner::before {
+  #appMenu-proton-update-banner::before {
     display: -moz-inline-box;
     margin-inline-end: var(--arrowpanel-menuicon-padding);
     width: 16px !important;
@@ -395,23 +395,23 @@ moz-card {
     margin-inline-start: 0 !important;
   }
   #appMenu-fxa-status2,
-#appMenu-zoom-controls2 {
+  #appMenu-zoom-controls2 {
     align-items: center;
     padding-top: var(--arrowpanel-menuimageblank-padding) !important;
     padding-bottom: var(--arrowpanel-menuimageblank-padding) !important;
   }
   #appMenu-fxa-status2::before,
-#appMenu-zoom-controls2::before {
+  #appMenu-zoom-controls2::before {
     margin-inline-end: 0 !important;
   }
   #appMenu-fxa-status2 #appMenu-zoomReset-button2 > .toolbarbutton-text,
-#appMenu-zoom-controls2 #appMenu-zoomReset-button2 > .toolbarbutton-text {
+  #appMenu-zoom-controls2 #appMenu-zoomReset-button2 > .toolbarbutton-text {
     border-radius: 8px !important;
     padding: 0 8px !important;
   }
   #appMenu-multiView .subviewbutton::before,
-#appMenu-proton-update-banner::before,
-.subviewbutton > image:not([label*=Zoom]) {
+  #appMenu-proton-update-banner::before,
+  .subviewbutton > image:not([label*=Zoom]) {
     fill: var(--toolbarbutton-icon-fill) !important;
     fill-opacity: var(--toolbarbutton-icon-fill-opacity) !important;
     -moz-context-properties: fill !important;
@@ -456,7 +456,7 @@ moz-card {
     list-style-image: url("data:image/svg+xml;base64,PCEtLSBUaGlzIFNvdXJjZSBDb2RlIEZvcm0gaXMgc3ViamVjdCB0byB0aGUgdGVybXMgb2YgdGhlIE1vemlsbGEgUHVibGljCiAgIC0gTGljZW5zZSwgdi4gMi4wLiBJZiBhIGNvcHkgb2YgdGhlIE1QTCB3YXMgbm90IGRpc3RyaWJ1dGVkIHdpdGggdGhpcwogICAtIGZpbGUsIFlvdSBjYW4gb2J0YWluIG9uZSBhdCBodHRwOi8vbW96aWxsYS5vcmcvTVBMLzIuMC8uIC0tPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDE2IDE2IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9ImNvbnRleHQtZmlsbCIgZmlsbC1vcGFjaXR5PSJjb250ZXh0LWZpbGwtb3BhY2l0eSI+CiAgPHBhdGggZD0ibTEzIDQtMSAwIDAtMmEyIDIgMCAwIDAtMi0yTDYgMGEyIDIgMCAwIDAtMiAybDAgMi0xIDBhMiAyIDAgMCAwLTIgMmwwIDVhMiAyIDAgMCAwIDIgMmwxIDAgMCAxYTIgMiAwIDAgMCAyIDJsNCAwYTIgMiAwIDAgMCAyLTJsMC0xIDEgMGEyIDIgMCAwIDAgMi0ybDAtNWEyIDIgMCAwIDAtMi0yem0tMi4yNSAxMC4xNS0uNi42LTQuMyAwLS42LS42IDAtNC4xNSA1LjUgMCAwIDQuMTV6bTAtMTAuMTUtNS41IDAgMC0yLjE1LjYtLjYgNC4zIDAgLjYuNiAwIDIuMTV6TTEzIDcuNmwtLjQuNC0xLjIgMC0uNC0uNCAwLTEuMi40LS40IDEuMiAwIC40LjQgMCAxLjJ6Ii8+Cjwvc3ZnPgo=");
   }
   #appMenu-save-file-button2 image,
-#appMenu-more-button2 image {
+  #appMenu-more-button2 image {
     width: 16px !important;
     height: 16px !important;
   }
@@ -473,7 +473,7 @@ moz-card {
     list-style-image: url("data:image/svg+xml;base64,PCEtLSBUaGlzIFNvdXJjZSBDb2RlIEZvcm0gaXMgc3ViamVjdCB0byB0aGUgdGVybXMgb2YgdGhlIE1vemlsbGEgUHVibGljCiAgIC0gTGljZW5zZSwgdi4gMi4wLiBJZiBhIGNvcHkgb2YgdGhlIE1QTCB3YXMgbm90IGRpc3RyaWJ1dGVkIHdpdGggdGhpcwogICAtIGZpbGUsIFlvdSBjYW4gb2J0YWluIG9uZSBhdCBodHRwOi8vbW96aWxsYS5vcmcvTVBMLzIuMC8uIC0tPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDE2IDE2IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9ImNvbnRleHQtZmlsbCIgZmlsbC1vcGFjaXR5PSJjb250ZXh0LWZpbGwtb3BhY2l0eSI+CiAgPHBhdGggZD0iTTcuNjI1IDEuNzVjMy40NDYgMCA2LjI1IDIuODA0IDYuMjUgNi4yNXMtMi44MDQgNi4yNS02LjI1IDYuMjUtNi4yNS0yLjgwNC02LjI1LTYuMjUgMi44MDQtNi4yNSA2LjI1LTYuMjVtMC0xLjI1YTcuNSA3LjUgMCAxIDAgMCAxNSA3LjUgNy41IDAgMCAwIDAtMTV6Ii8+CiAgPHBhdGggZD0iTTcuNjI1IDkuNzA5QS42MjUuNjI1IDAgMCAxIDcgOS4wODRsMC0uNzY3YzAtLjUyNy4zNy0uOTg3Ljg3OS0xLjA5Mi41NzctLjEyLjk5Ni0uNjM1Ljk5Ni0xLjIyNWExLjI1MiAxLjI1MiAwIDAgMC0yLjQzMi0uNDA5LjYyNi42MjYgMCAwIDEtMS4xODEtLjQwOEEyLjUgMi41IDAgMSAxIDguMjUgOC40MjFsMCAuNjYzYzAgLjM0NS0uMjguNjI1LS42MjUuNjI1eiIvPgogIDxwYXRoIGQ9Im04IDEyLS43NSAwLS4yNS0uMjVMNyAxMWwuMjUtLjI1Ljc1IDAgLjI1LjI1IDAgLjc1eiIvPgo8L3N2Zz4K");
   }
   #PanelUI-fxa-menu-connect-device-button .toolbarbutton-icon,
-#PanelUI-fxa-menu-account-signout-button .toolbarbutton-icon {
+  #PanelUI-fxa-menu-account-signout-button .toolbarbutton-icon {
     width: 16px !important;
     height: 16px !important;
   }
@@ -493,7 +493,7 @@ moz-card {
     list-style-image: url("data:image/svg+xml;base64,PCEtLSBUaGlzIFNvdXJjZSBDb2RlIEZvcm0gaXMgc3ViamVjdCB0byB0aGUgdGVybXMgb2YgdGhlIE1vemlsbGEgUHVibGljCiAgIC0gTGljZW5zZSwgdi4gMi4wLiBJZiBhIGNvcHkgb2YgdGhlIE1QTCB3YXMgbm90IGRpc3RyaWJ1dGVkIHdpdGggdGhpcwogICAtIGZpbGUsIFlvdSBjYW4gb2J0YWluIG9uZSBhdCBodHRwOi8vbW96aWxsYS5vcmcvTVBMLzIuMC8uIC0tPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDE2IDE2Ij48cGF0aCBmaWxsPSJjb250ZXh0LWZpbGwiIGZpbGwtb3BhY2l0eT0iY29udGV4dC1maWxsLW9wYWNpdHkiIGQ9Ik0xNCA1aC0zYTIgMiAwIDAgMC0yIDJ2NmEyIDIgMCAwIDAgMiAyaDNhMiAyIDAgMCAwIDItMlY3YTIgMiAwIDAgMC0yLTJ6bS0zIDhWN2gzdjZ6Ii8+PHBhdGggZmlsbD0iY29udGV4dC1maWxsIiBmaWxsLW9wYWNpdHk9ImNvbnRleHQtZmlsbC1vcGFjaXR5IiBkPSJNMiAzaDh2MWgyVjNhMiAyIDAgMCAwLTItMkgyYTIgMiAwIDAgMC0yIDJ2NmEyIDIgMCAwIDAgMiAyaDN2MUgzYTEgMSAwIDAgMCAwIDJoNXYtMkg3di0xaDFWOUgyeiIvPjwvc3ZnPg==");
   }
   #PanelUI-fxa-menu-sync-prefs-button,
-#PanelUI-remotetabs-view-managedevices {
+  #PanelUI-remotetabs-view-managedevices {
     list-style-image: url("data:image/svg+xml;base64,PCEtLSBUaGlzIFNvdXJjZSBDb2RlIEZvcm0gaXMgc3ViamVjdCB0byB0aGUgdGVybXMgb2YgdGhlIE1vemlsbGEgUHVibGljCiAgIC0gTGljZW5zZSwgdi4gMi4wLiBJZiBhIGNvcHkgb2YgdGhlIE1QTCB3YXMgbm90IGRpc3RyaWJ1dGVkIHdpdGggdGhpcwogICAtIGZpbGUsIFlvdSBjYW4gb2J0YWluIG9uZSBhdCBodHRwOi8vbW96aWxsYS5vcmcvTVBMLzIuMC8uIC0tPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDE2IDE2IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9ImNvbnRleHQtZmlsbCIgZmlsbC1vcGFjaXR5PSJjb250ZXh0LWZpbGwtb3BhY2l0eSI+CiAgPHBhdGggZD0ibTguNjI4IDE2LTEuMjUgMGExLjYzMiAxLjYzMiAwIDAgMS0xLjU2Mi0xLjE3N2wtLjQwNi0xLjQxNGE1LjkzOSA1LjkzOSAwIDAgMS0uNzgtLjQ2NmwtMS40NDguMzZhMS42MzIgMS42MzIgMCAwIDEtMS43OTktLjc2NWwtLjYyNS0xLjA4MmExLjYzMyAxLjYzMyAwIDAgMSAuMjI5LTEuOTMxbDEuMDQ1LTEuMTAxQTMuMjc5IDMuMjc5IDAgMCAxIDIgOGMwLS4xNTMuMDE0LS4zMDIuMDMyLS40NUwuOTk5IDYuNDc5YTEuNjMgMS42MyAwIDAgMS0uMjM4LTEuOTRsLjYyNS0xLjA4M2ExLjYzNiAxLjYzNiAwIDAgMSAxLjc4Ny0uNzY4bDEuNDc3LjM1NWMuMjU4LS4xNzkuNTEtLjMyOS43NjEtLjQ1MmwuNDA2LTEuNDE0QTEuNjMgMS42MyAwIDAgMSA3LjM3OCAwbDEuMjUgMGMuNzE0IDAgMS4zNTQuNDc4IDEuNTU5IDEuMTYzbC40MjUgMS40MzZjLjI0Mi4xMjEuNDg0LjI2Ni43MzkuNDQ0bDEuNDc4LS4zNTVhMS42MzUgMS42MzUgMCAwIDEgMS43ODYuNzY4bC42MjUgMS4wODNjLjM2LjYyNS4yNjMgMS40MjItLjIzNyAxLjk0MWwtMS4wMzUgMS4wN2MuMDE4LjE0OC4wMzIuMjk3LjAzMi40NSAwIC4xNDUtLjAxNC4yODUtLjAzMS40MjRsMS4wNDUgMS4xMDFjLjQ5Mi41MTkuNTg2IDEuMzEyLjIyOSAxLjkzMWwtLjYyNSAxLjA4M2ExLjYzIDEuNjMgMCAwIDEtMS44Ljc2NGwtMS40NDctLjM2Yy0uMjU5LjE4Mi0uNTEuMzMzLS43NTkuNDU4bC0uNDI1IDEuNDM3QTEuNjM4IDEuNjM4IDAgMCAxIDguNjI4IDE2em0tNC4wMTYtNC4zNDEuNTI4LjEwOWE0LjcyIDQuNzIgMCAwIDAgMS4wMzIuNjE1bC4zNTkuNDA0LjQ4NSAxLjY5MWMuMDQ2LjE2LjE5NC4yNzEuMzYuMjcxbDEuMjUgMGEuMzcuMzcgMCAwIDAgLjM1OS0uMjY5bC41MDYtMS43MDcuMzU1LS4zOThjLjMyNC0uMTM3LjY0NS0uMzMgMS4wMS0uNjA4bC41MjktLjEwOSAxLjczMS40MzFhLjM3OC4zNzggMCAwIDAgLjQxNi0uMTc2bC42MjUtMS4wODNhLjM3OC4zNzggMCAwIDAtLjA1My0uNDQ2bC0xLjI1LTEuMzE3LS4xNjctLjUwNS4wMjItLjE3NGMuMDIxLS4xMjcuMDQxLS4yNTUuMDQxLS4zODggMC0uMTQ5LS4wMjEtLjI5My0uMDQyLS40MzdsLS4wMjEtLjE1LjE3MS0uNTEzIDEuMjQ0LTEuMjg5YS4zNzguMzc4IDAgMCAwIC4wNTUtLjQ0OGwtLjYyNS0xLjA4MmEuMzguMzggMCAwIDAtLjQxMi0uMTc3bC0xLjc1OC40MjItLjUyMS0uMTA4YTQuNyA0LjcgMCAwIDAtLjk5MS0uNTk0bC0uMzU2LS4zOTgtLjUwNi0xLjcwN2EuMzczLjM3MyAwIDAgMC0uMzYtLjI2OWwtMS4yNSAwYS4zNzcuMzc3IDAgMCAwLS4zNi4yNzFsLS40ODYgMS42OTEtLjM2LjQwNWE0LjcxIDQuNzEgMCAwIDAtMS4wMTMuNmwtLjUyMS4xMDktMS43NTctLjQyMmEuMzgzLjM4MyAwIDAgMC0uNDEzLjE3N2wtLjYyNSAxLjA4M2EuMzc1LjM3NSAwIDAgMCAuMDU1LjQ0N0wzLjE0MiA2LjlsLjE3MS41MTQtLjAyMS4xNUEyLjk4MSAyLjk4MSAwIDAgMCAzLjI1IDhjMCAuMTMzLjAyLjI2MS4wMzcuMzg5bC4wMjIuMTc0LS4xNjcuNTA1LTEuMjUgMS4zMTdhLjM4LjM4IDAgMCAwLS4wNTMuNDQ2bC42MjUgMS4wODNhLjM4LjM4IDAgMCAwIC40MTUuMTc2bDEuNzMzLS40MzF6Ii8+CiAgPHBhdGggZD0iTTggNi4yNWMuOTY1IDAgMS43NS43ODUgMS43NSAxLjc1UzguOTY1IDkuNzUgOCA5Ljc1IDYuMjUgOC45NjUgNi4yNSA4IDcuMDM1IDYuMjUgOCA2LjI1TTggNWEzIDMgMCAxIDAgMCA2IDMgMyAwIDAgMCAwLTZ6Ii8+Cjwvc3ZnPgo=");
   }
   .PanelUI-remotetabs-notabsforclient-label {
@@ -632,7 +632,7 @@ moz-card {
     --inactive-titlebar-opacity: 1 !important;
   }
   :root:-moz-window-inactive .browser-titlebar#TabsToolbar,
-:root:-moz-window-inactive #nav-bar {
+  :root:-moz-window-inactive #nav-bar {
     opacity: var(--inactive-titlebar-opacity) !important;
   }
 }
