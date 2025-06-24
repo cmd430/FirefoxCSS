@@ -50,3 +50,4 @@ user_pref("userChrome.CompactMenus", true);
 user_pref("userChrome.SaferPromptDialogs", true);
 user_pref("userChrome.RemoveAllTabsButton", true);
 user_pref("userChrome.DisableInactiveFadeout", true);
+user_pref("userChrome.DisableSidebar", true);

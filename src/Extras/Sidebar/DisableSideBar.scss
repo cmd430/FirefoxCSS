@@ -1,0 +1,5 @@
+@media (-moz-bool-pref: "userChrome.DisableSidebar") {
+  #sidebar-main {
+    display: none;
+  }
+}
