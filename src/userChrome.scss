@@ -7,6 +7,7 @@
 
 // Style Parts
 @import './Standard/Menubar/BetterMenubar.scss';
+@import './Standard/Sidebar/BetterSidebar.scss';
 @import './Standard/Tabs/SquareTabs.scss';
 @import './Standard/Tabs/TabSpacer.scss';
 @import './Standard/ToolbarButtons/FirefoxView.scss';
@@ -16,8 +17,7 @@
 
 
 // Experiments
-@import './Standard/Experiments/Testing.scss';
-@import './Standard/Experiments/Sidebar/BetterSidebar.scss';
+@import './Experiments/Testing.scss';
 
 
 // Extras
@@ -28,5 +28,6 @@
 @import './Extras/Menus/CompactHamburgerMenu.scss';
 @import './Extras/Menus/CompactExtensionsMenu.scss';
 @import './Extras/PromptDialog/SaferPromptDialogs.scss';
+@import './Extras/Sidebar/DisableSideBar.scss';
 @import './Extras/AllTabsButton/RemoveAllTabsButton.scss';
 @import './Extras/NaviatorToolbox/DisableInactiveFadeout.scss';

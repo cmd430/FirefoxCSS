@@ -73,6 +73,39 @@
   padding: 0 !important;
 }
 
+#tabbrowser-tabbox {
+  box-shadow: unset !important;
+}
+
+#sidebar-main,
+#sidebar-box {
+  outline: 1px solid var(--chrome-content-separator-color);
+}
+
+#sidebar-box {
+  padding: 0 !important;
+}
+#sidebar-box #sidebar {
+  border-radius: unset !important;
+  box-shadow: unset !important;
+  border: unset !important;
+  outline: none !important;
+}
+
+.sidebar-panel {
+  padding: 0 var(--space-large) var(--space-large) var(--space-large) !important;
+}
+
+moz-card, moz-card::part(summary) {
+  border-radius: var(--border-radius-small) !important;
+}
+
+:host,
+moz-card {
+  --card-border-radius: var(--border-radius-small) !important;
+  --card-padding: var(--space-small) !important;
+}
+
 #nav-bar {
   position: unset;
 }
@@ -250,31 +283,6 @@
   border-bottom-right-radius: 0px !important;
 }
 
-@media -moz-pref("userChrome.Experiments") and -moz-pref("sidebar.revamp") {
-  #tabbrowser-tabbox {
-    box-shadow: unset !important;
-  }
-  #sidebar-main,
-  #sidebar-box {
-    outline: 1px solid var(--chrome-content-separator-color);
-  }
-  #sidebar-box {
-    padding: 0 !important;
-  }
-  #sidebar-box #sidebar {
-    border-radius: unset !important;
-    box-shadow: unset !important;
-    border: unset !important;
-  }
-  moz-card, moz-card::part(summary) {
-    border-radius: var(--border-radius-small) !important;
-  }
-  :host,
-  moz-card {
-    --card-border-radius: var(--border-radius-small) !important;
-    --card-padding: var(--space-small) !important;
-  }
-}
 @media -moz-pref("userChrome.BetterFindBar") {
   #browser .browserContainer {
     position: relative;
@@ -620,6 +628,11 @@
     height: var(--doc-height-px);
     border-radius: var(--border-radius) !important;
     transform: translateX(-50%);
+  }
+}
+@media -moz-pref("userChrome.DisableSidebar") {
+  #sidebar-main {
+    display: none;
   }
 }
 @media -moz-pref("userChrome.RemoveAllTabsButton") {
