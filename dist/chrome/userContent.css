@@ -20,7 +20,7 @@
   }
   .top-site-inner a + div {
     position: absolute;
-    top: 8px;
+    top: 5px;
     right: 21px;
   }
   .top-site-inner a + div > .context-menu-button.icon {
@@ -30,8 +30,5 @@
   }
   .top-site-inner a + div > .context-menu {
     top: 12px !important;
-  }
-  .top-site-inner a > div > .icon.icon-pin-small {
-    margin: 4px;
   }
 }
