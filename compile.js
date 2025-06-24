@@ -6,12 +6,16 @@ function compileCSS () {
   try {
     // scss to css
     const { css } = sass.renderSync({
+      silenceDeprecations: [
+        'import',
+        'legacy-js-api'
+      ],
       file: 'src/userChrome.scss',
       outputStyle: 'expanded',
       sourceMap: false,
       omitSourceMapUrl: true,
       functions: {
-        'inline-svg($path, $selectors: null)': inliner('./src/')
+        'inline-svg($path, $selectors: null)': inliner('./src/', {})
       }
     })
 
