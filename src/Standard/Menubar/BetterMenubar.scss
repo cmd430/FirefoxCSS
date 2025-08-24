@@ -17,7 +17,4 @@
     height: 100%;
   }
 
-  + #TabsToolbar #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-icon-image[src] ~ .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-    padding: 0 !important;
-  }
 }
