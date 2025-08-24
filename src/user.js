@@ -8,6 +8,7 @@ user_pref("signon.firefoxRelay.feature", "disabled");
 user_pref("dom.ipc.processPriorityManager.backgroundUsesEcoQoS", false);
 user_pref("media.suspend-background-video.enabled", false);
 user_pref("browser.tabs.hoverPreview.enabled", false);
+user_pref("browser.tabs.groups.enabled", false);
 user_pref("browser.urlbar.suggest.addons", false);
 user_pref("browser.urlbar.suggest.bookmark", false);
 user_pref("browser.urlbar.suggest.calculator", false);
