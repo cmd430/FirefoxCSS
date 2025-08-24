@@ -44,6 +44,12 @@
         --lwt-tab-line-color: inital !important;
       }
 
+      &[pinned] .tab-icon-stack > .tab-icon-overlay {
+        border-radius: 2px !important;
+        top: unset;
+        inset-inline-end: unset;
+      }
+
       .tab-background {
         border-radius: 0 !important;
         margin: 0 !important;
