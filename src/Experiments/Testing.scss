@@ -1,3 +1,9 @@
 @media (-moz-bool-pref: "userChrome.Experiments") {
-
+  #pinned-drop-indicator {
+    // TODO: replace with user_pref("<not exist yet>", false);
+    width: 0 !important;
+    overflow: hidden;
+    left: -20px;
+    position: absolute;
+  }
 }
