@@ -46,8 +46,8 @@
 
       &[pinned] .tab-icon-stack > .tab-icon-overlay {
         border-radius: 2px !important;
-        top: unset;
-        inset-inline-end: unset;
+        top: unset !important;
+        inset-inline-end: unset !important;
       }
 
       .tab-background {
