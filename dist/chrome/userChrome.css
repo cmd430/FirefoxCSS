@@ -69,9 +69,6 @@
 #toolbar-menubar #menubar-items #main-menubar {
   height: 100%;
 }
-#toolbar-menubar + #TabsToolbar #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-icon-image[src] ~ .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
-  padding: 0 !important;
-}
 
 #tabbrowser-tabbox {
   box-shadow: unset !important;
@@ -141,6 +138,11 @@ moz-card {
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-stack {
   --lwt-tab-line-color: inital !important;
+}
+#TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[pinned] .tab-icon-stack > .tab-icon-overlay {
+  border-radius: 2px !important;
+  top: unset !important;
+  inset-inline-end: unset !important;
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background {
   border-radius: 0 !important;
@@ -283,6 +285,14 @@ moz-card {
   border-bottom-right-radius: 0px !important;
 }
 
+@media -moz-pref("userChrome.Experiments") {
+  #pinned-drop-indicator {
+    width: 0 !important;
+    overflow: hidden;
+    left: -20px;
+    position: absolute;
+  }
+}
 @media -moz-pref("userChrome.BetterFindBar") {
   #browser .browserContainer {
     position: relative;
@@ -316,19 +326,25 @@ moz-card {
     --tab-icon-overlay-fill-playing: var(--panel-banner-item-update-supported-bgcolor);
     --tab-icon-overlay-fill-crashed: var(--warning-icon-bgcolor);
   }
-  #TabsToolbar .tab-audio-button {
+  #TabsToolbar .tab-audio-button,
+  #TabsToolbar .tab-icon-overlay {
+    fill: var(--button-icon-fill) !important;
     cursor: pointer !important;
   }
-  #TabsToolbar .tab-audio-button[activemedia-blocked]:not([crashed]) {
+  #TabsToolbar .tab-audio-button[activemedia-blocked]:not([crashed]),
+  #TabsToolbar .tab-icon-overlay[activemedia-blocked]:not([crashed]) {
     --button-icon-fill: var(--tab-icon-overlay-fill-blocked) !important;
   }
-  #TabsToolbar .tab-audio-button[soundplaying]:not([crashed]) {
+  #TabsToolbar .tab-audio-button[soundplaying]:not([crashed]),
+  #TabsToolbar .tab-icon-overlay[soundplaying]:not([crashed]) {
     --button-icon-fill: var(--tab-icon-overlay-fill-playing) !important;
   }
-  #TabsToolbar .tab-audio-button[muted]:not([crashed]) {
+  #TabsToolbar .tab-audio-button[muted]:not([crashed]),
+  #TabsToolbar .tab-icon-overlay[muted]:not([crashed]) {
     --button-icon-fill: var(--tab-icon-overlay-fill-muted) !important;
   }
-  #TabsToolbar .tab-audio-button[crashed] {
+  #TabsToolbar .tab-audio-button[crashed],
+  #TabsToolbar .tab-icon-overlay[crashed] {
     --button-icon-fill: var(--tab-icon-overlay-fill-crashed) !important;
   }
 }
