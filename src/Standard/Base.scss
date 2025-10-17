@@ -1,10 +1,5 @@
 :root {
-  &[lwt-toolbar="light"] {
-    --chrome-content-separator-color: rgb(191, 190, 193) !important;
-  }
-  &[lwt-toolbar="dark"] {
-    --chrome-content-separator-color: rgb(15, 15, 15) !important;
-  }
+  --chrome-content-separator-color: light-dark(rgb(191, 190, 193), rgb(15, 15, 15)) !important;
 
   --nav-seperator-color: var(--chrome-content-separator-color) !important;
   --tab-separator-color: var(--nav-seperator-color) !important;
