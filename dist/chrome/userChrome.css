@@ -1,4 +1,5 @@
 :root {
+  --chrome-content-separator-color: light-dark(rgb(191, 190, 193), rgb(15, 15, 15)) !important;
   --nav-seperator-color: var(--chrome-content-separator-color) !important;
   --tab-separator-color: var(--nav-seperator-color) !important;
   --tab-line-color: var(--nav-seperator-color) !important;
@@ -7,12 +8,6 @@
   --toolbarbutton-border-radius: var(--border-radius) !important;
   --arrowpanel-border-radius: var(--border-radius) !important;
   --arrowpanel-menuitem-border-radius: var(--border-radius) !important;
-}
-:root[lwt-toolbar=light] {
-  --chrome-content-separator-color: rgb(191, 190, 193) !important;
-}
-:root[lwt-toolbar=dark] {
-  --chrome-content-separator-color: rgb(15, 15, 15) !important;
 }
 
 :root[sizemode=normal] #TabsToolbar {
@@ -138,6 +133,9 @@ moz-card {
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-stack {
   --lwt-tab-line-color: inital !important;
+}
+#TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-stack > .tab-content > .tab-close-button {
+  border-radius: var(--tab-border-radius) !important;
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[pinned] .tab-icon-stack > .tab-icon-overlay {
   border-radius: 2px !important;
