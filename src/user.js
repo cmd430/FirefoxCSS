@@ -30,6 +30,7 @@ user_pref("browser.urlbar.suggest.history", true);
 user_pref("browser.urlbar.trimHttps", true);
 user_pref("browser.urlbar.showSearchTerms.enabled", false);
 user_pref("browser.urlbar.focusContentDocumentOnEsc", true);
+user_pref("browser.urlbar.perplexity.hasBeenInSearchMode", false);
 user_pref("browser.theme.native-theme", false);
 user_pref("widget.windows.mica", false);
 user_pref("widget.windows.mica.popups", 2);
@@ -39,6 +40,8 @@ user_pref("gfx.font_rendering.cleartype_params.enhanced_contrast", 75);
 user_pref("gfx.font_rendering.cleartype_params.rendering_mode", 5);
 user_pref("gfx.font_rendering.cleartype_params.gamma", 1750);
 user_pref("gfx.use_text_smoothing_setting", true);
+user_pref("sidebar.notification.badge.aichat", false);
+user_pref("browser.ml.chat.menu", false);
 
 
 //userChrome Prefs
