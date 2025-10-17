@@ -40,8 +40,13 @@
     tab.tabbrowser-tab {
       padding-inline: 0px !important;
 
-      .tab-stack { // fix colorways
+      .tab-stack {
+        // fix colorways
         --lwt-tab-line-color: inital !important;
+
+        > .tab-content > .tab-close-button {
+          border-radius: var(--tab-border-radius) !important;
+        }
       }
 
       &[pinned] .tab-icon-stack > .tab-icon-overlay {
