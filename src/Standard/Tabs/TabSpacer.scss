@@ -1,12 +1,11 @@
 #TabsToolbar .titlebar-spacer {
-
-  &[type="pre-tabs"] {
-    border-right: 1px solid var(--tab-separator-color) !important;
-  }
-
   &[type="pre-tabs"],
   &[type="post-tabs"] {
     width: var(--tab-spacer-width) !important;
   }
-
 }
+
+// Hide spacer when button is before tabs
+// #TabsToolbar .titlebar-spacer[type="pre-tabs"]:has(+ .toolbar-items toolbarbutton + #tabbrowser-tabs) {
+//   width: 0 !important;
+// }

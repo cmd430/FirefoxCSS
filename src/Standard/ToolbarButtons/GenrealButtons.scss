@@ -1,5 +1,5 @@
 // fix toolbar button size
-#TabsToolbar toolbarbutton:not(.titlebar-button) {
+#TabsToolbar toolbarbutton:not(.titlebar-button, #firefox-view-button) {
   --toolbarbutton-inner-padding: var(--toolbarbutton-inner-padding-precalc) !important;
   margin: 0 !important;
   padding: 0 var(--toolbarbutton-outer-padding-precalc) !important;

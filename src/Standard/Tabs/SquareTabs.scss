@@ -11,7 +11,11 @@
   appearance: auto !important;
   z-index: 1;
 
-  // when too many tabs
+  #pinned-tabs-container,
+  #pinned-tabs-container:empty ~ #tabbrowser-arrowscrollbox {
+    border-left: 1px solid var(--tab-separator-color) !important;
+  }
+
   #tabbrowser-arrowscrollbox {
     max-height: var(--tab-min-height);
 
@@ -25,9 +29,6 @@
   #tabbrowser-tabs {
     min-height: var(--tab-min-height) !important;
 
-    &[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > tab.tabbrowser-tab[first-visible-unpinned-tab] {
-      margin-inline-start: var(--pin-unpin-edge-padding) !important;
-    }
     &:not([secondarytext-unsupported]) tab.tabbrowser-tab:not(:hover) {
       & .tab-icon-stack:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) > :not(.tab-icon-overlay) {
         opacity: 1 !important;
@@ -68,7 +69,9 @@
           overflow: hidden;
           position: absolute;
           height: 100%;
-          opacity: 0.5 !important;
+        }
+        &::before {
+          transform: translateX(-1px);
         }
         &::after {
           top: 0;
@@ -87,9 +90,6 @@
         height: calc(var(--tab-min-height) - 1px);
       }
 
-      &:not([first-visible-tab]) .tab-background::before {
-        transform: translateX(-1px);
-      }
       &[visuallyselected] {
         z-index: 1;
 
@@ -97,10 +97,6 @@
           box-shadow: none !important;
           border: none !important;
           outline: none !important;
-
-          &::before, &::after {
-            opacity: 1 !important;
-          }
         }
       }
       &[multiselected],
@@ -135,13 +131,30 @@
   }
 }
 
-// hide first tab left line when maximized mode
+// Remove extra spacing before tabs when button is before
+// :root:not([privatebrowsingmode]) :is(toolbarbutton, toolbarpaletteitem) ~ #tabbrowser-tabs {
+//   padding-inline-start: unset !important; //2px;
+//   margin-inline-start: unset !important; //2px;
+// }
+
+// Remove extra spacing before tabs when fiewfox view button is before
+:root:not([privatebrowsingmode]) :is(toolbarbutton#firefox-view-button) ~ #tabbrowser-tabs {
+ padding-inline-start: unset !important;
+ margin-inline-start: unset !important;
+}
+
 :root[sizemode="maximized"] {
-  #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[first-visible-tab] {
-    &:hover .tab-background, .tab-background {
-      &::before {
-        opacity: 0 !important;
-      }
+
+  // remove tab border on left tab in maximized mode
+  #TabsToolbar-customization-target:not(:has(> toolbarbutton + #tabbrowser-tabs)) {
+    #pinned-tabs-container,
+    #pinned-tabs-container:empty ~ #tabbrowser-arrowscrollbox {
+      border-left: 0px  !important;
     }
+  }
+
+  // Tab line fix for maximized
+  #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background .tab-context-line {
+    height: 3px;
   }
 }

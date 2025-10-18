@@ -2,6 +2,23 @@
   margin: 0 !important;
   padding: 0 !important;
   position: relative;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+
+  &[open],
+  &:hover {
+    border-left-color: var(--tab-separator-color) !important;
+    border-right-color: var(--tab-separator-color) !important;
+  }
+
+  &:has(+ #tabbrowser-tabs) {
+    border-right: 0 !important;
+
+    &[open],
+    &:hover {
+      border-right: 0 !important;
+    }
+  }
 
   &::before {
     content: '';
@@ -27,5 +44,27 @@
   .toolbarbutton-icon {
     border-radius: 0 !important;
     box-shadow: none !important;
+  }
+
+  &:not([open]):hover > image {
+    border-bottom-color: var(--tab-separator-color);
+  }
+
+  > image {
+    border-bottom: 1px solid transparent;
+  }
+
+}
+
+:root:not([privatebrowsingmode]) :is(toolbarbutton#firefox-view-button) ~ #tabbrowser-tabs {
+ padding-inline-start: unset !important;
+ margin-inline-start: unset !important;
+}
+
+:root[sizemode="maximized"] {
+
+  // remove left line
+  #TabsToolbar toolbarbutton[id="firefox-view-button"]:is(:first-child) {
+    border-left: 0px !important;
   }
 }

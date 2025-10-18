@@ -3,6 +3,7 @@
   --nav-seperator-color: var(--chrome-content-separator-color) !important;
   --tab-separator-color: var(--nav-seperator-color) !important;
   --tab-line-color: var(--nav-seperator-color) !important;
+  --tabstrip-inner-border: var(--nav-seperator-color) !important;
   --border-radius: 4px;
   --tab-border-radius: var(--border-radius) !important;
   --toolbarbutton-border-radius: var(--border-radius) !important;
@@ -113,6 +114,10 @@ moz-card {
   appearance: auto !important;
   z-index: 1;
 }
+#TabsToolbar #pinned-tabs-container,
+#TabsToolbar #pinned-tabs-container:empty ~ #tabbrowser-arrowscrollbox {
+  border-left: 1px solid var(--tab-separator-color) !important;
+}
 #TabsToolbar #tabbrowser-arrowscrollbox {
   max-height: var(--tab-min-height);
 }
@@ -122,9 +127,6 @@ moz-card {
 }
 #TabsToolbar #tabbrowser-tabs {
   min-height: var(--tab-min-height) !important;
-}
-#TabsToolbar #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > tab.tabbrowser-tab[first-visible-unpinned-tab] {
-  margin-inline-start: var(--pin-unpin-edge-padding) !important;
 }
 #TabsToolbar #tabbrowser-tabs:not([secondarytext-unsupported]) tab.tabbrowser-tab:not(:hover) .tab-icon-stack:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) > :not(.tab-icon-overlay) {
   opacity: 1 !important;
@@ -159,7 +161,9 @@ moz-card {
   overflow: hidden;
   position: absolute;
   height: 100%;
-  opacity: 0.5 !important;
+}
+#TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background::before {
+  transform: translateX(-1px);
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background::after {
   top: 0;
@@ -174,9 +178,6 @@ moz-card {
   min-height: calc(var(--tab-min-height) - 1px) !important;
   height: calc(var(--tab-min-height) - 1px);
 }
-#TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab:not([first-visible-tab]) .tab-background::before {
-  transform: translateX(-1px);
-}
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[visuallyselected] {
   z-index: 1;
 }
@@ -184,9 +185,6 @@ moz-card {
   box-shadow: none !important;
   border: none !important;
   outline: none !important;
-}
-#TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[visuallyselected] .tab-background::before, #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[visuallyselected] .tab-background::after {
-  opacity: 1 !important;
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[multiselected] .tab-background, #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[multiselected][selected] .tab-background {
   outline-offset: -2px !important;
@@ -210,13 +208,19 @@ moz-card {
   background: var(--toolbar-bgcolor) !important;
 }
 
-:root[sizemode=maximized] #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[first-visible-tab]:hover .tab-background::before, :root[sizemode=maximized] #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[first-visible-tab] .tab-background::before {
-  opacity: 0 !important;
+:root:not([privatebrowsingmode]) :is(toolbarbutton#firefox-view-button) ~ #tabbrowser-tabs {
+  padding-inline-start: unset !important;
+  margin-inline-start: unset !important;
 }
 
-#TabsToolbar .titlebar-spacer[type=pre-tabs] {
-  border-right: 1px solid var(--tab-separator-color) !important;
+:root[sizemode=maximized] #TabsToolbar-customization-target:not(:has(> toolbarbutton + #tabbrowser-tabs)) #pinned-tabs-container,
+:root[sizemode=maximized] #TabsToolbar-customization-target:not(:has(> toolbarbutton + #tabbrowser-tabs)) #pinned-tabs-container:empty ~ #tabbrowser-arrowscrollbox {
+  border-left: 0px !important;
 }
+:root[sizemode=maximized] #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background .tab-context-line {
+  height: 3px;
+}
+
 #TabsToolbar .titlebar-spacer[type=pre-tabs], #TabsToolbar .titlebar-spacer[type=post-tabs] {
   width: var(--tab-spacer-width) !important;
 }
@@ -225,6 +229,18 @@ moz-card {
   margin: 0 !important;
   padding: 0 !important;
   position: relative;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+#TabsToolbar toolbarbutton[id=firefox-view-button][open], #TabsToolbar toolbarbutton[id=firefox-view-button]:hover {
+  border-left-color: var(--tab-separator-color) !important;
+  border-right-color: var(--tab-separator-color) !important;
+}
+#TabsToolbar toolbarbutton[id=firefox-view-button]:has(+ #tabbrowser-tabs) {
+  border-right: 0 !important;
+}
+#TabsToolbar toolbarbutton[id=firefox-view-button]:has(+ #tabbrowser-tabs)[open], #TabsToolbar toolbarbutton[id=firefox-view-button]:has(+ #tabbrowser-tabs):hover {
+  border-right: 0 !important;
 }
 #TabsToolbar toolbarbutton[id=firefox-view-button]::before {
   content: "";
@@ -249,8 +265,23 @@ moz-card {
   border-radius: 0 !important;
   box-shadow: none !important;
 }
+#TabsToolbar toolbarbutton[id=firefox-view-button]:not([open]):hover > image {
+  border-bottom-color: var(--tab-separator-color);
+}
+#TabsToolbar toolbarbutton[id=firefox-view-button] > image {
+  border-bottom: 1px solid transparent;
+}
 
-#TabsToolbar toolbarbutton:not(.titlebar-button) {
+:root:not([privatebrowsingmode]) :is(toolbarbutton#firefox-view-button) ~ #tabbrowser-tabs {
+  padding-inline-start: unset !important;
+  margin-inline-start: unset !important;
+}
+
+:root[sizemode=maximized] #TabsToolbar toolbarbutton[id=firefox-view-button]:is(:first-child) {
+  border-left: 0px !important;
+}
+
+#TabsToolbar toolbarbutton:not(.titlebar-button, #firefox-view-button) {
   --toolbarbutton-inner-padding: var(--toolbarbutton-inner-padding-precalc) !important;
   margin: 0 !important;
   padding: 0 var(--toolbarbutton-outer-padding-precalc) !important;
