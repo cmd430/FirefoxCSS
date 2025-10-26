@@ -56,15 +56,13 @@
 
 }
 
+// Remove extra spacing before tabs when fiewfox view button is before
 :root:not([privatebrowsingmode]) :is(toolbarbutton#firefox-view-button) ~ #tabbrowser-tabs {
- padding-inline-start: unset !important;
- margin-inline-start: unset !important;
+  padding-inline-start: unset !important;
+  margin-inline-start: unset !important;
 }
 
-:root[sizemode="maximized"] {
-
-  // remove left line
-  #TabsToolbar toolbarbutton[id="firefox-view-button"]:is(:first-child) {
-    border-left: 0px !important;
-  }
+// remove left line when maximized if first element
+:root[sizemode="maximized"] #TabsToolbar toolbarbutton[id="firefox-view-button"]:is(:first-child) {
+  border-left: 0px !important;
 }

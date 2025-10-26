@@ -131,19 +131,12 @@
   }
 }
 
-// Remove extra spacing before tabs when button is before
-// :root:not([privatebrowsingmode]) :is(toolbarbutton, toolbarpaletteitem) ~ #tabbrowser-tabs {
-//   padding-inline-start: unset !important; //2px;
-//   margin-inline-start: unset !important; //2px;
-// }
-
-// Remove extra spacing before tabs when fiewfox view button is before
-:root:not([privatebrowsingmode]) :is(toolbarbutton#firefox-view-button) ~ #tabbrowser-tabs {
- padding-inline-start: unset !important;
- margin-inline-start: unset !important;
-}
-
 :root[sizemode="maximized"] {
+  // remove space after button before tab when maximized
+  :is(toolbarbutton) ~ #tabbrowser-tabs {
+    padding-inline-start: unset !important;
+    margin-inline-start: unset !important;
+  }
 
   // remove tab border on left tab in maximized mode
   #TabsToolbar-customization-target:not(:has(> toolbarbutton + #tabbrowser-tabs)) {
