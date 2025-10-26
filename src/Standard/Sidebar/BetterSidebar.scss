@@ -19,7 +19,8 @@
   }
 }
 
-#sidebar-panel-header {
+#sidebar-panel-header,
+#sidebar-header {
   display: none !important;
 }
 
@@ -37,4 +38,27 @@ moz-card {
 moz-card {
   --card-border-radius: var(--border-radius-small) !important;
   --card-padding: var(--space-small) !important;
+}
+
+
+/* Nicer old Sidebar */
+#sidebar-button .toolbarbutton-icon {
+  list-style-image: url("chrome://browser/skin/sidebar-collapsed.svg") !important;
+}
+#sidebar-button[checked] .toolbarbutton-icon {
+  list-style-image: url("chrome://browser/skin/sidebar-expanded.svg") !important;
+}
+
+#sidebar-splitter {
+  width: var(--space-medium) !important;
+  border: 1px solid var(--chrome-content-separator-color) !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  height: calc(100% + 2px);
+  top: -1px;
+  box-shadow: 0 0 0 3px var(--toolbar-bgcolor) inset;
+
+  &:hover {
+    background-color: var(--focus-outline-color) !important;
+  }
 }
