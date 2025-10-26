@@ -85,7 +85,8 @@
   outline: none !important;
 }
 
-#sidebar-panel-header {
+#sidebar-panel-header,
+#sidebar-header {
   display: none !important;
 }
 
@@ -101,6 +102,28 @@ moz-card, moz-card::part(summary) {
 moz-card {
   --card-border-radius: var(--border-radius-small) !important;
   --card-padding: var(--space-small) !important;
+}
+
+/* Nicer old Sidebar */
+#sidebar-button .toolbarbutton-icon {
+  list-style-image: url("chrome://browser/skin/sidebar-collapsed.svg") !important;
+}
+
+#sidebar-button[checked] .toolbarbutton-icon {
+  list-style-image: url("chrome://browser/skin/sidebar-expanded.svg") !important;
+}
+
+#sidebar-splitter {
+  width: var(--space-medium) !important;
+  border: 1px solid var(--chrome-content-separator-color) !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  height: calc(100% + 2px);
+  top: -1px;
+  box-shadow: 0 0 0 3px var(--toolbar-bgcolor) inset;
+}
+#sidebar-splitter:hover {
+  background-color: var(--focus-outline-color) !important;
 }
 
 #nav-bar {
@@ -208,11 +231,10 @@ moz-card {
   background: var(--toolbar-bgcolor) !important;
 }
 
-:root:not([privatebrowsingmode]) :is(toolbarbutton#firefox-view-button) ~ #tabbrowser-tabs {
+:root[sizemode=maximized] :is(toolbarbutton) ~ #tabbrowser-tabs {
   padding-inline-start: unset !important;
   margin-inline-start: unset !important;
 }
-
 :root[sizemode=maximized] #TabsToolbar-customization-target:not(:has(> toolbarbutton + #tabbrowser-tabs)) #pinned-tabs-container,
 :root[sizemode=maximized] #TabsToolbar-customization-target:not(:has(> toolbarbutton + #tabbrowser-tabs)) #pinned-tabs-container:empty ~ #tabbrowser-arrowscrollbox {
   border-left: 0px !important;
