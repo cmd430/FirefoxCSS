@@ -33,6 +33,7 @@ user_pref("browser.urlbar.showSearchTerms.enabled", false);
 user_pref("browser.urlbar.focusContentDocumentOnEsc", true);
 user_pref("browser.urlbar.perplexity.hasBeenInSearchMode", false);
 user_pref("browser.theme.native-theme", false);
+user_pref("browser.search.visualSearch.featureGate", false);
 user_pref("browser.ml.enable", false);
 user_pref("browser.ml.chat.enabled", false);
 user_pref("browser.ml.chat.menu", false);
