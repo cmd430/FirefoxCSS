@@ -50,6 +50,30 @@
   --pin-unpin-edge-padding: var(--tab-spacer-width);
 }
 
+#browser #tabbrowser-tabbox tabpanels#tabbrowser-tabpanels[splitview] .split-view-panel {
+  margin: 0 !important;
+}
+#browser #tabbrowser-tabbox tabpanels#tabbrowser-tabpanels[splitview] .split-view-panel > .browserContainer {
+  border-radius: 0 !important;
+  outline: none !important;
+}
+#browser #tabbrowser-tabbox tabpanels#tabbrowser-tabpanels[splitview] .split-view-panel split-view-footer {
+  border-radius: 0 !important;
+}
+#browser #tabbrowser-tabbox tabpanels#tabbrowser-tabpanels[splitview] splitter.split-view-splitter {
+  position: relative;
+  width: var(--space-medium) !important;
+  border: 1px solid var(--chrome-content-separator-color) !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+  height: calc(100% + 2px);
+  top: -1px;
+  box-shadow: 0 0 0 3px var(--toolbar-bgcolor) inset;
+}
+#browser #tabbrowser-tabbox tabpanels#tabbrowser-tabpanels[splitview] splitter.split-view-splitter:hover {
+  background-color: var(--focus-outline-color) !important;
+}
+
 #toolbar-menubar {
   box-shadow: 0 1px 0 var(--tab-separator-color, rgba(0, 0, 0, 0.3)) !important;
 }
@@ -156,6 +180,25 @@ moz-card {
 }
 #TabsToolbar #tabbrowser-tabs:not([secondarytext-unsupported]) tab.tabbrowser-tab:not(:hover) .tab-icon-overlay:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) {
   opacity: 0 !important;
+}
+#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper {
+  padding: 0 !important;
+  margin-block: unset !important;
+  border-radius: 0 !important;
+  height: calc(var(--tab-min-height) - 1px);
+  min-height: calc(var(--tab-min-height) - 1px) !important;
+}
+#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper:not([hasactivetab]) .tabbrowser-tab:last-child {
+  border-inline-start: none !important;
+}
+#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:not([visuallyselected]):hover {
+  transform: translateY(-3px);
+  height: calc(var(--tab-min-height) - 3px);
+}
+#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:not([visuallyselected]):hover .tab-background,
+#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:not([visuallyselected]) .tab-background,
+#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab .tab-background {
+  min-height: var(--tab-min-height) !important;
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab {
   padding-inline: 0px !important;

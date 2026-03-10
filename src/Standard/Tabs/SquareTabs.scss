@@ -38,6 +38,31 @@
       }
     }
 
+    // split view
+    tab-split-view-wrapper {
+      padding: 0 !important;
+      margin-block: unset !important;
+      border-radius: 0 !important;
+      height: calc(var(--tab-min-height) - 1px);
+      min-height: calc(var(--tab-min-height) - 1px) !important;
+
+      &:not([hasactivetab]) .tabbrowser-tab:last-child {
+        border-inline-start: none !important;
+      }
+
+      tab.tabbrowser-tab:not([visuallyselected]):hover {
+        transform: translateY(-3px);
+        height: calc(var(--tab-min-height) - 3px);
+      }
+
+      tab.tabbrowser-tab:not([visuallyselected]):hover .tab-background,
+      tab.tabbrowser-tab:not([visuallyselected]) .tab-background,
+      tab.tabbrowser-tab .tab-background {
+        min-height: var(--tab-min-height) !important;
+      }
+    }
+
+    // tabs
     tab.tabbrowser-tab {
       padding-inline: 0px !important;
 

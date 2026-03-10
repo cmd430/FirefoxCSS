@@ -1,0 +1,33 @@
+#browser #tabbrowser-tabbox tabpanels#tabbrowser-tabpanels[splitview] {
+  .split-view-panel {
+    margin: 0 !important;
+
+    > .browserContainer {
+      border-radius: 0 !important;
+      outline: none !important;
+    }
+
+    &.deck-selected > .browserContainer {
+      // active
+    }
+
+    split-view-footer {
+      border-radius: 0 !important;
+    }
+  }
+
+  splitter.split-view-splitter {
+    position: relative;
+    width: var(--space-medium) !important;
+    border: 1px solid var(--chrome-content-separator-color) !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    height: calc(100% + 2px);
+    top: -1px;
+    box-shadow: 0 0 0 3px var(--toolbar-bgcolor) inset;
+
+    &:hover {
+      background-color: var(--focus-outline-color) !important;
+    }
+  }
+}
