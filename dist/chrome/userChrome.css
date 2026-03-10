@@ -191,9 +191,18 @@ moz-card {
 #TabsToolbar #tabbrowser-tabs tab-split-view-wrapper:not([hasactivetab]) .tabbrowser-tab:last-child {
   border-inline-start: none !important;
 }
+#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper[hasactivetab] > tab.tabbrowser-tab:not([visuallyselected]) .tab-background > .tab-context-line, #TabsToolbar #tabbrowser-tabs tab-split-view-wrapper:hover > tab.tabbrowser-tab:not([visuallyselected]) .tab-background > .tab-context-line {
+  background-color: var(--toolbarbutton-hover-background);
+}
+#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:not([visuallyselected]) {
+  transform: translateY(0px);
+}
 #TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:not([visuallyselected]):hover {
   transform: translateY(-3px);
   height: calc(var(--tab-min-height) - 3px);
+}
+#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:not([visuallyselected]) .tab-background:first-child::before {
+  width: 0;
 }
 #TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:not([visuallyselected]):hover .tab-background,
 #TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:not([visuallyselected]) .tab-background,

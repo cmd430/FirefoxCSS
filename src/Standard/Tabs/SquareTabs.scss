@@ -50,9 +50,24 @@
         border-inline-start: none !important;
       }
 
-      tab.tabbrowser-tab:not([visuallyselected]):hover {
-        transform: translateY(-3px);
-        height: calc(var(--tab-min-height) - 3px);
+      &[hasactivetab],
+      &:hover {
+        & > tab.tabbrowser-tab:not([visuallyselected]) .tab-background > .tab-context-line {
+        background-color: var(--toolbarbutton-hover-background);
+        }
+      }
+
+      tab.tabbrowser-tab:not([visuallyselected]) {
+        transform: translateY(0px);
+
+        &:hover {
+          transform: translateY(-3px);
+          height: calc(var(--tab-min-height) - 3px);
+        }
+
+        .tab-background:first-child::before {
+          width: 0;
+        }
       }
 
       tab.tabbrowser-tab:not([visuallyselected]):hover .tab-background,
