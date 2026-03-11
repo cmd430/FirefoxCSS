@@ -59,13 +59,13 @@
       }
 
       tab.tabbrowser-tab {
-          &:not([visuallyselected]) {
-            transform: translateY(0px);
+        &:not([visuallyselected]) {
+          transform: translateY(0px);
 
-            &:hover {
-              transform: translateY(-3px);
-              height: calc(var(--tab-min-height) - 3px);
-            }
+          &:hover {
+            transform: translateY(-3px);
+            height: calc(var(--tab-min-height) - 3px);
+          }
         }
 
         &:first-child .tab-background::before,
