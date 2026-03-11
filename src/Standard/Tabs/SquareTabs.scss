@@ -45,6 +45,7 @@
       border-radius: 0 !important;
       height: calc(var(--tab-min-height) - 1px);
       min-height: calc(var(--tab-min-height) - 1px) !important;
+      overflow-x: clip;
 
       &:not([hasactivetab]) .tabbrowser-tab:last-child {
         border-inline-start: none !important;
@@ -53,20 +54,24 @@
       &[hasactivetab],
       &:hover {
         & > tab.tabbrowser-tab:not([visuallyselected]) .tab-background > .tab-context-line {
-        background-color: var(--toolbarbutton-hover-background);
+          background-color: var(--toolbarbutton-hover-background);
         }
       }
 
-      tab.tabbrowser-tab:not([visuallyselected]) {
-        transform: translateY(0px);
+      tab.tabbrowser-tab {
+          &:not([visuallyselected]) {
+            transform: translateY(0px);
 
-        &:hover {
-          transform: translateY(-3px);
-          height: calc(var(--tab-min-height) - 3px);
+            &:hover {
+              transform: translateY(-3px);
+              height: calc(var(--tab-min-height) - 3px);
+            }
         }
 
-        .tab-background:first-child::before {
-          width: 0;
+        &:first-child .tab-background::before,
+        &:first-child .tab-background::after,
+        &:last-child .tab-background::before {
+          height: calc(100% + 3px) !important;
         }
       }
 
@@ -74,6 +79,7 @@
       tab.tabbrowser-tab:not([visuallyselected]) .tab-background,
       tab.tabbrowser-tab .tab-background {
         min-height: var(--tab-min-height) !important;
+
       }
     }
 
