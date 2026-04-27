@@ -12,23 +12,19 @@
  * New Tab page adjustments
  */
 @-moz-document url-prefix(about:newtab), url-prefix(about:home) {
-  .top-sites-list-wrapper {
-    --size-item-large: 40px;
+  .top-sites-list {
+    --top-sites-max-per-row: 8;
+    --col-width: calc(var(--mrec-width) / 3.5);
+    --border-radius-large: 6px;
+    --border-radius-circle: 5px;
   }
-  .top-site-outer {
-    margin-block-end: unset !important;
+
+  .top-site-outer .tile {
+    width: var(--col-width) !important;
+    height: var(--col-width) !important;
   }
-  .top-site-inner a + div {
-    position: absolute;
-    top: 5px;
-    right: 21px;
-  }
-  .top-site-inner a + div > .context-menu-button.icon {
-    border-radius: 12px !important;
-    /*border-top-right-radius: 12px !important;*/
-    overflow: hidden !important;
-  }
-  .top-site-inner a + div > .context-menu {
-    top: 12px !important;
+
+  .search-handoff-button {
+    border-radius: 4px !important;
   }
 }

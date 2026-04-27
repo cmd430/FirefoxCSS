@@ -9,6 +9,9 @@
   --toolbarbutton-border-radius: var(--border-radius) !important;
   --arrowpanel-border-radius: var(--border-radius) !important;
   --arrowpanel-menuitem-border-radius: var(--border-radius) !important;
+  --urlbar-border-radius: var(--border-radius) !important;
+  --urlbar-inner-border-radius: calc(var(--border-radius) - 1px) !important;
+  --button-border-radius: calc(var(--border-radius) - 1px) !important;
 }
 
 :root[sizemode=normal] #TabsToolbar {
