@@ -1,5 +1,7 @@
 :root {
   --chrome-content-separator-color: light-dark(rgb(191, 190, 193), rgb(15, 15, 15)) !important;
+  --toolbar-bgcolor: var(--toolbar-background-color) !important;
+  --toolbarbutton-hover-background: var(--button-background-color-hover) !important;
 
   --nav-seperator-color: var(--chrome-content-separator-color) !important;
   --tab-separator-color: var(--nav-seperator-color) !important;
