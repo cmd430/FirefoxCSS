@@ -410,6 +410,9 @@ moz-card {
   #browser .browserContainer {
     position: relative;
   }
+  #browser .browserContainer > findbar {
+    grid-area: initial !important;
+  }
   #browser findbar {
     position: absolute;
     top: 0;
