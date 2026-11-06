@@ -131,9 +131,15 @@
         }
       }
 
-      &:not([visuallyselected]):hover .tab-background {
-        min-height: calc(var(--tab-min-height) - 1px) !important;
-        height: calc(var(--tab-min-height) - 1px);
+      &:not([visuallyselected]) {
+        .tab-background::before {
+          transform: translateX(-2px);
+        }
+
+        &:hover .tab-background {
+          min-height: calc(var(--tab-min-height) - 1px) !important;
+          height: calc(var(--tab-min-height) - 1px);
+        }
       }
 
       &[visuallyselected] {

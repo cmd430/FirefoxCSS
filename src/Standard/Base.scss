@@ -1,5 +1,6 @@
 :root {
   --chrome-content-separator-color: light-dark(rgb(191, 190, 193), rgb(15, 15, 15)) !important;
+  --color-accent-primary: rgb(10, 132, 255) !important;
   --toolbar-bgcolor: var(--toolbar-background-color) !important;
   --toolbarbutton-hover-background: var(--button-background-color-hover) !important;
 
@@ -7,6 +8,8 @@
   --tab-separator-color: var(--nav-seperator-color) !important;
   --tab-line-color: var(--nav-seperator-color) !important;
   --tabstrip-inner-border: var(--nav-seperator-color) !important;
+  --tab-loading-fill: var(--tab-icon-fill-loading) !important;
+
   --border-radius: 4px;
   --tab-border-radius: var(--border-radius) !important;
   --toolbarbutton-border-radius: var(--border-radius) !important;
