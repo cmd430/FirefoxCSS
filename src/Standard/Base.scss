@@ -29,6 +29,9 @@
   --urlbar-border-radius: var(--border-radius) !important;
   --urlbar-inner-border-radius: calc(var(--border-radius) - 1px) !important;
   --button-border-radius: calc(var(--border-radius) - 1px) !important;
+
+  --urlbar-background-overhang-open: 2px !important;
+  --urlbar-background-border-top-radius-open: 4px !important;
 }
 
 // fix tab top space in window mode
@@ -61,3 +64,5 @@
 .sidebar-splitter {
   border-radius: 0 !important;
 }
+
+

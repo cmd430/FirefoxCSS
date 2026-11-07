@@ -24,6 +24,8 @@
   --urlbar-border-radius: var(--border-radius) !important;
   --urlbar-inner-border-radius: calc(var(--border-radius) - 1px) !important;
   --button-border-radius: calc(var(--border-radius) - 1px) !important;
+  --urlbar-background-overhang-open: 2px !important;
+  --urlbar-background-border-top-radius-open: 4px !important;
 }
 
 :root[sizemode=normal] #TabsToolbar {
@@ -435,6 +437,11 @@ moz-card {
   padding-inline: 1px !important;
   border-bottom-left-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
+}
+
+.urlbarView {
+  --urlbarview-margin-block: 4px !important;
+  --urlbarview-padding: 0 !important;
 }
 
 @media -moz-pref("userChrome.Experiments") {
