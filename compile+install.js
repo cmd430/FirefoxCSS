@@ -18,6 +18,9 @@ console.debug('CSS Compiled:', COMPILED)
 // write to profile
 if (FIREFOX_PROFILE && COMPILED) {
   fs.copyFileSync('dist/chrome/userChrome.css', `${FIREFOX_PROFILE_DIR}/chrome/userChrome.css`)
+  console.log('Updated userChrome.css')
   fs.copyFileSync('dist/chrome/userContent.css', `${FIREFOX_PROFILE_DIR}/chrome/userContent.css`)
+  console.log('Updated userContent.css')
   fs.copyFileSync('dist/user.js', `${FIREFOX_PROFILE_DIR}/user.js`)
+  console.log('Updated user.js')
 }
