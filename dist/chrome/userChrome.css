@@ -261,6 +261,9 @@ moz-card {
   top: unset !important;
   inset-inline-end: unset !important;
 }
+#TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab[usercontextid] .tab-background .tab-context-line {
+  background: var(--identity-stroke-color) border-box border-box !important;
+}
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background {
   border-radius: 0 !important;
   margin: 0 !important;
@@ -284,8 +287,9 @@ moz-card {
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab .tab-background .tab-context-line {
   margin: 0 !important;
-  height: 2px;
+  height: 2px !important;
   background-color: transparent;
+  width: 100% !important;
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab:not([visuallyselected]) .tab-background::before {
   transform: translateX(-2px);

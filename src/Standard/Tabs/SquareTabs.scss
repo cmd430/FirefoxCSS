@@ -102,6 +102,10 @@
         inset-inline-end: unset !important;
       }
 
+      &[usercontextid] .tab-background .tab-context-line {
+        background: var(--identity-stroke-color) border-box border-box !important;
+      }
+
       .tab-background {
         border-radius: 0 !important;
         margin: 0 !important;
@@ -126,8 +130,9 @@
 
         .tab-context-line {
           margin: 0 !important;
-          height: 2px;
+          height: 2px !important;
           background-color: transparent;
+          width: 100% !important;
         }
       }
 
