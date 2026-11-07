@@ -28,6 +28,11 @@
   padding: 0 var(--space-large) var(--space-large) var(--space-large) !important;
 }
 
+.sidebar-splitter {
+  border-radius: 0 !important;
+}
+
+
 moz-card {
   &, &::part(summary) {
     border-radius: var(--border-radius-small) !important;

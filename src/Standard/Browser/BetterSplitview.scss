@@ -1,6 +1,7 @@
 #browser #tabbrowser-tabbox tabpanels#tabbrowser-tabpanels[splitview] {
   .split-view-panel {
     margin: 0 !important;
+    border-radius: 0 !important;
 
     > .browserContainer {
       border-radius: 0 !important;
@@ -25,9 +26,14 @@
     height: calc(100% + 2px);
     top: -1px;
     box-shadow: 0 0 0 3px var(--toolbar-bgcolor) inset;
+    border-radius: 0 !important;
+    margin-inline: 0px !important;
 
     &:hover {
       background-color: var(--focus-outline-color) !important;
     }
   }
 }
+
+
+// TODO: fix split tab + split tab hover

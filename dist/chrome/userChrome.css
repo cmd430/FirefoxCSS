@@ -50,10 +50,6 @@
   border: none !important;
 }
 
-.sidebar-splitter {
-  border-radius: 0 !important;
-}
-
 :root {
   --tab-min-height: 36px !important;
   --tab-spacer-width: 18px;
@@ -91,6 +87,7 @@
 
 #browser #tabbrowser-tabbox tabpanels#tabbrowser-tabpanels[splitview] .split-view-panel {
   margin: 0 !important;
+  border-radius: 0 !important;
 }
 #browser #tabbrowser-tabbox tabpanels#tabbrowser-tabpanels[splitview] .split-view-panel > .browserContainer {
   border-radius: 0 !important;
@@ -108,6 +105,8 @@
   height: calc(100% + 2px);
   top: -1px;
   box-shadow: 0 0 0 3px var(--toolbar-bgcolor) inset;
+  border-radius: 0 !important;
+  margin-inline: 0px !important;
 }
 #browser #tabbrowser-tabbox tabpanels#tabbrowser-tabpanels[splitview] splitter.split-view-splitter:hover {
   background-color: var(--focus-outline-color) !important;
@@ -155,6 +154,10 @@
 
 .sidebar-panel {
   padding: 0 var(--space-large) var(--space-large) var(--space-large) !important;
+}
+
+.sidebar-splitter {
+  border-radius: 0 !important;
 }
 
 moz-card, moz-card::part(summary) {
