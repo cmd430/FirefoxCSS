@@ -217,6 +217,10 @@ moz-card {
 #TabsToolbar #tabbrowser-tabs {
   min-height: var(--tab-min-height) !important;
 }
+#TabsToolbar #tabbrowser-tabs::before {
+  padding-inline-start: unset !important;
+  margin-inline-start: unset !important;
+}
 #TabsToolbar #tabbrowser-tabs:not([secondarytext-unsupported]) tab.tabbrowser-tab:not(:hover) .tab-icon-stack:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) > :not(.tab-icon-overlay) {
   opacity: 1 !important;
 }
@@ -227,25 +231,32 @@ moz-card {
   padding: 0 !important;
   margin-block: unset !important;
   border-radius: 0 !important;
-  height: calc(var(--tab-min-height) - 1px);
-  min-height: calc(var(--tab-min-height) - 1px) !important;
   overflow-x: clip;
+  background-color: transparent !important;
 }
 #TabsToolbar #tabbrowser-tabs tab-split-view-wrapper:not([hasactivetab]) .tabbrowser-tab:last-child {
   border-inline-start: none !important;
 }
 #TabsToolbar #tabbrowser-tabs tab-split-view-wrapper[hasactivetab] > tab.tabbrowser-tab:not([visuallyselected]) .tab-background > .tab-context-line, #TabsToolbar #tabbrowser-tabs tab-split-view-wrapper:hover > tab.tabbrowser-tab:not([visuallyselected]) .tab-background > .tab-context-line {
   background-color: var(--toolbarbutton-hover-background);
+  top: 1px !important;
+}
+#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab {
+  padding-block: 0 !important;
+  margin-block: 0 !important;
+}
+#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab .tab-stack {
+  padding-inline: 0 !important;
+  border-inline: none !important;
+}
+#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:not(:first-of-type) .tab-background::before {
+  display: none;
 }
 #TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:not([visuallyselected]) {
-  transform: translateY(0px);
+  transform: translateY(-1px);
 }
-#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:not([visuallyselected]):hover {
-  transform: translateY(-3px);
-  height: calc(var(--tab-min-height) - 3px);
-}
-#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:first-child .tab-background::before, #TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:first-child .tab-background::after, #TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:last-child .tab-background::before {
-  height: calc(100% + 3px) !important;
+#TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab[visuallyselected] .tab-stack .tab-content {
+  transform: translateY(-1px);
 }
 #TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:not([visuallyselected]):hover .tab-background,
 #TabsToolbar #tabbrowser-tabs tab-split-view-wrapper tab.tabbrowser-tab:not([visuallyselected]) .tab-background,
@@ -295,6 +306,9 @@ moz-card {
   height: 2px !important;
   background-color: transparent;
   width: 100% !important;
+  left: 0;
+  top: 0;
+  position: absolute;
 }
 #TabsToolbar #tabbrowser-tabs tab.tabbrowser-tab:not([visuallyselected]) .tab-background::before {
   transform: translateX(-2px);
@@ -486,10 +500,10 @@ moz-card {
 }
 @media -moz-pref("userChrome.ColoredTabMediaControls") {
   :root {
-    --tab-icon-overlay-fill-blocked: var(--toolbar-field-color);
+    --tab-icon-overlay-fill-blocked: var(--toolbar-field-text-color);
     --tab-icon-overlay-fill-muted: var(--button-background-color-destructive);
     --tab-icon-overlay-fill-playing: var(--panel-banner-item-update-supported-bgcolor);
-    --tab-icon-overlay-fill-crashed: var(--warning-icon-bgcolor);
+    --tab-icon-overlay-fill-crashed: var(--icon-color-warning);
   }
   #TabsToolbar .tab-audio-button,
   #TabsToolbar .tab-icon-overlay {

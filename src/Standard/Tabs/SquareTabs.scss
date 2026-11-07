@@ -29,6 +29,11 @@
   #tabbrowser-tabs {
     min-height: var(--tab-min-height) !important;
 
+    &::before {
+      padding-inline-start: unset !important;
+      margin-inline-start: unset !important;
+    }
+
     &:not([secondarytext-unsupported]) tab.tabbrowser-tab:not(:hover) {
       & .tab-icon-stack:not([sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]) > :not(.tab-icon-overlay) {
         opacity: 1 !important;
@@ -43,9 +48,8 @@
       padding: 0 !important;
       margin-block: unset !important;
       border-radius: 0 !important;
-      height: calc(var(--tab-min-height) - 1px);
-      min-height: calc(var(--tab-min-height) - 1px) !important;
       overflow-x: clip;
+      background-color: transparent !important;
 
       &:not([hasactivetab]) .tabbrowser-tab:last-child {
         border-inline-start: none !important;
@@ -55,23 +59,29 @@
       &:hover {
         & > tab.tabbrowser-tab:not([visuallyselected]) .tab-background > .tab-context-line {
           background-color: var(--toolbarbutton-hover-background);
+          top: 1px !important;
         }
       }
 
       tab.tabbrowser-tab {
-        &:not([visuallyselected]) {
-          transform: translateY(0px);
+        padding-block: 0 !important;
+        margin-block: 0 !important;
 
-          &:hover {
-            transform: translateY(-3px);
-            height: calc(var(--tab-min-height) - 3px);
-          }
+        .tab-stack {
+          padding-inline: 0 !important;
+          border-inline: none !important;
         }
 
-        &:first-child .tab-background::before,
-        &:first-child .tab-background::after,
-        &:last-child .tab-background::before {
-          height: calc(100% + 3px) !important;
+        &:not(:first-of-type) .tab-background::before {
+          display: none;
+        }
+
+        &:not([visuallyselected]) {
+          transform: translateY(-1px);
+        }
+
+        &[visuallyselected] .tab-stack .tab-content {
+          transform: translateY(-1px);
         }
       }
 
@@ -79,7 +89,6 @@
       tab.tabbrowser-tab:not([visuallyselected]) .tab-background,
       tab.tabbrowser-tab .tab-background {
         min-height: var(--tab-min-height) !important;
-
       }
     }
 
@@ -133,6 +142,9 @@
           height: 2px !important;
           background-color: transparent;
           width: 100% !important;
+          left: 0;
+          top: 0;
+          position: absolute;
         }
       }
 
