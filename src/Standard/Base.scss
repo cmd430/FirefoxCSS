@@ -11,6 +11,16 @@
   --tab-loading-fill: var(--tab-icon-fill-loading) !important;
 
   --border-radius: 4px;
+  --border-radius-small: var(--border-radius) !important;
+  --border-radius-medium: var(--border-radius) !important;
+  --border-radius-large: var(--border-radius) !important;
+  --border-radius-xlarge: var(--border-radius) !important;
+  --border-radius-circle: var(--border-radius) !important;
+
+  --sidebar-box-start-start-radius: 0px !important;
+  --sidebar-box-start-end-radius: 0px !important;
+  --sidebar-border-color: transparent !important;
+
   --tab-border-radius: var(--border-radius) !important;
   --toolbarbutton-border-radius: var(--border-radius) !important;
   --arrowpanel-border-radius: var(--border-radius) !important;
@@ -26,4 +36,28 @@
   #TabsToolbar{
     margin-top: 1px !important;
   }
+}
+
+// fix sidebar and content
+#sidebar-box {
+  --sidebar-box-start-start-radius: 0px !important;
+  --sidebar-box-start-end-radius: 0px !important;
+}
+
+#tabbrowser-tabpanels .browserContainer {
+  --content-area-start-radius: 0px !important;
+  --content-area-end-radius: 0px !important;
+  border-inline-start: 0 !important;
+}
+
+#browser {
+  border-top: var(--border-width) solid var(--chrome-content-separator-color) !important;
+
+  .browserContainer {
+    border: none !important;
+  }
+}
+
+.sidebar-splitter {
+  border-radius: 0 !important;
 }
