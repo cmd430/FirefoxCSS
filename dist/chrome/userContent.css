@@ -12,11 +12,16 @@
  * New Tab page adjustments
  */
 @-moz-document url-prefix(about:newtab), url-prefix(about:home) {
+  :root {
+    --button-border-radius: 5px !important;
+  }
+
   .top-sites-list {
-    --top-sites-max-per-row: 8;
-    --col-width: calc(var(--mrec-width) / 3.5);
-    --border-radius-large: 6px;
-    --border-radius-circle: 5px;
+    --top-sites-max-per-row: 8 !important;
+    --col-width: calc(var(--mrec-width) / 3.5) !important;
+    --border-radius-large: 6px  !important;
+    --border-radius-medium: 6px !important;
+    --border-radius-circle: 5px !important;
   }
 
   .top-site-outer .tile {
@@ -26,5 +31,18 @@
 
   .search-handoff-button {
     border-radius: 4px !important;
+  }
+
+  .nova-enabled .sidebar-inline-start {
+    grid-column: 2 !important;
+
+    .logo-and-wordmark-wrapper .logo-and-wordmark {
+      margin: 0 auto 2rem auto !important;
+    }
+  }
+
+  panel-list {
+    --panel-list-border-radius: 5px !important;
+    --panel-menuitem-border-radius: 4px !important;
   }
 }
